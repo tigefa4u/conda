@@ -1,0 +1,3289 @@
+@startuml classes_conda
+set namespaceSeparator none
+left to right direction
+skinparam nodesep 5
+skinparam ranksep 5
+left to right direction
+skinparam nodesep 5
+skinparam ranksep 5
+left to right direction
+skinparam nodesep 5
+skinparam ranksep 5
+left to right direction
+skinparam nodesep 5
+skinparam ranksep 5
+class "six_with_metaclass" as conda.common.compat.six_with_metaclass. #dodgerblue {
+}
+class "Action" as argparse.Action #grey {
+  choices : NoneType
+  const : NoneType
+  default : NoneType
+  dest
+  help : NoneType
+  metavar : NoneType
+  nargs : NoneType
+  option_strings
+  required : bool
+  type : NoneType
+}
+class "<color:red>ActivateHelp</color>" as conda.exceptions.ActivateHelp #aliceblue {
+}
+class "AggregateCompileMultiPycAction" as conda.core.path_actions.AggregateCompileMultiPycAction #chocolate {
+}
+class "Arch" as conda.models.enums.Arch #darkseagreen {
+  name
+  from_sys(cls)
+}
+class "ArgParseRawParameter" as conda.common.configuration.ArgParseRawParameter #burlywood {
+  source : str
+  keyflag()
+  make_raw_parameters(cls, args_from_argparse)
+  value(parameter_obj)
+  valueflags(parameter_obj)
+}
+class "<color:red>ArgumentError</color>" as conda.exceptions.ArgumentError #aliceblue {
+  return_code : int
+}
+class "ArgumentParser" as conda.cli.conda_argparse.ArgumentParser #aquamarine {
+  description
+  error(message)
+  print_help()
+}
+class "ArgumentParser" as argparse.ArgumentParser #grey {
+  add_help : bool
+  allow_abbrev : bool
+  epilog : NoneType
+  formatter_class
+  fromfile_prefix_chars : NoneType
+  prog : NoneType
+  usage : NoneType, str
+  add_subparsers()
+  convert_arg_line_to_args(arg_line)
+  error(message)
+  exit(status, message)
+  format_help()
+  format_usage()
+  parse_args(args, namespace)
+  parse_intermixed_args(args, namespace)
+  parse_known_args(args, namespace)
+  parse_known_intermixed_args(args, namespace)
+  print_help(file)
+  print_usage(file)
+}
+class "AttrDict" as conda._vendor.auxlib.collection.AttrDict #forestgreen {
+}
+class "AuthBase" as requests.auth.AuthBase #gold {
+}
+class "AuthBase" as pip._vendor.requests.auth.AuthBase #hotpink {
+}
+class "<color:red>AuthenticationError</color>" as conda.exceptions.AuthenticationError #aliceblue {
+}
+class "BY_HANDLE_FILE_INFORMATION" as conda.gateways.disk.link.CrossPlatformStLink._initialize.BY_HANDLE_FILE_INFORMATION #mediumspringgreen {
+}
+class "BaseAdapter" as requests.adapters.BaseAdapter #gold {
+  close()
+  send(request, stream, timeout, verify, cert, proxies)
+}
+class "BaseAdapter" as pip._vendor.requests.adapters.BaseAdapter #hotpink {
+  close()
+  send(request, stream, timeout, verify, cert, proxies)
+}
+class "BaseSpec" as conda.models.version.BaseSpec #darkseagreen {
+  exact_value
+  match
+  raw_value
+  spec
+  spec_str
+  all_match(spec_str)
+  always_true_match(spec_str)
+  any_match(spec_str)
+  exact_match(spec_str)
+  is_exact()
+  merge(other)
+  operator_match(spec_str)
+  regex_match(spec_str)
+}
+class "<color:red>BasicClobberError</color>" as conda.exceptions.BasicClobberError #aliceblue {
+}
+class "<color:red>BinaryPrefixReplacementError</color>" as conda.exceptions.BinaryPrefixReplacementError #aliceblue {
+}
+class "BooleanField" as conda._vendor.auxlib.entity.BooleanField #forestgreen {
+  box(instance, instance_type, val)
+}
+class "BufferedRWPair" as _io.BufferedRWPair #grey {
+  close()
+  detach()
+  fileno()
+  flush()
+  isatty()
+  peek()
+  read()
+  read1()
+  readable()
+  readinto()
+  readinto1()
+  readline()
+  readlines()
+  seek()
+  seekable()
+  tell()
+  truncate()
+  writable()
+  write()
+  writelines()
+}
+class "BufferedReader" as _io.BufferedReader #grey {
+  close()
+  detach()
+  fileno()
+  flush()
+  isatty()
+  peek()
+  read()
+  read1()
+  readable()
+  readinto()
+  readinto1()
+  readline()
+  readlines()
+  seek()
+  seekable()
+  tell()
+  truncate()
+  writable()
+  write()
+  writelines()
+}
+class "BufferedWriter" as _io.BufferedWriter #grey {
+  close()
+  detach()
+  fileno()
+  flush()
+  isatty()
+  read()
+  read1()
+  readable()
+  readinto()
+  readinto1()
+  readline()
+  readlines()
+  seek()
+  seekable()
+  tell()
+  truncate()
+  writable()
+  write()
+  writelines()
+}
+class "BuildNumberMatch" as conda.models.version.BuildNumberMatch #darkseagreen {
+  exact_value
+  matcher_vo
+  operator_func
+  regex
+  get_matcher(vspec)
+  merge(other)
+  union(other)
+}
+class "CacheUrlAction" as conda.core.path_actions.CacheUrlAction #chocolate {
+  hold_path
+  md5 : NoneType
+  sha256 : NoneType
+  size : NoneType
+  target_full_path
+  target_package_basename
+  target_pkgs_dir
+  url
+  cleanup()
+  execute(progress_update_callback)
+  reverse()
+  verify()
+}
+class "<color:red>CancelOperation</color>" as conda.gateways.disk.update.CancelOperation #darkgoldenrod {
+}
+class "CaptureTarget" as conda.common.io.CaptureTarget #burlywood {
+  name
+}
+class "CapturedText" as conda.common.io.captured.CapturedText #aliceblue {
+  stderr : NoneType
+  stdout
+}
+class "CaseInsensitiveDict" as requests.structures.CaseInsensitiveDict #gold {
+  copy()
+  lower_items()
+}
+class "CaseInsensitiveDict" as pip._vendor.requests.structures.CaseInsensitiveDict #hotpink {
+  copy()
+  lower_items()
+}
+class "<color:red>CaseInsensitiveFileSystemError</color>" as conda.exceptions.CaseInsensitiveFileSystemError #aliceblue {
+}
+class "CaseInsensitiveStrMatch" as conda.models.match_spec.CaseInsensitiveStrMatch #darkseagreen {
+  match(other)
+}
+class "Channel" as conda.models.channel.Channel #darkseagreen {
+  auth : NoneType
+  base_url
+  base_urls
+  canonical_name
+  channel_location
+  channel_name
+  location : NoneType
+  name : str
+  package_filename : NoneType
+  platform : NoneType
+  scheme : NoneType
+  subdir
+  subdir_url
+  token : NoneType
+  url_channel_wtf
+  dump()
+  from_channel_name(channel_name)
+  from_url(url)
+  from_value(value)
+  make_simple_channel(channel_alias, channel_url, name)
+  url(with_credentials)
+  urls(with_credentials, subdirs)
+}
+class "<color:red>ChannelError</color>" as conda.exceptions.ChannelError #aliceblue {
+}
+class "ChannelField" as conda.models.records.ChannelField #darkseagreen {
+  dump(instance, instance_type, val)
+}
+class "ChannelMatch" as conda.models.match_spec.ChannelMatch #darkseagreen {
+  match(other)
+}
+class "<color:red>ChannelNotAllowed</color>" as conda.exceptions.ChannelNotAllowed #aliceblue {
+}
+class "ChannelPriority" as conda.base.constants.ChannelPriority #antiquewhite {
+  DISABLED : str
+  FLEXIBLE : str
+  STRICT : str
+}
+class "ChannelPriorityMeta" as conda.base.constants.ChannelPriorityMeta #antiquewhite {
+}
+class "ChannelType" as conda.models.channel.ChannelType #darkseagreen {
+}
+class "<color:red>ChecksumMismatchError</color>" as conda.exceptions.ChecksumMismatchError #aliceblue {
+}
+class "Clauses" as conda.common._logic.Clauses #burlywood {
+  add_clause
+  add_clauses
+  m : int
+  unsat : bool
+  All(iter, polarity)
+  And(f, g, polarity, add_new_clauses)
+  Any(iter, polarity)
+  AtMostOne_BDD(vals, polarity)
+  AtMostOne_NSQ(vals, polarity)
+  BDD(lits, coeffs, nterms, lo, hi, polarity)
+  Combine(args, polarity)
+  Eval(func, args, polarity)
+  ExactlyOne_BDD(vals, polarity)
+  ExactlyOne_NSQ(vals, polarity)
+  ITE(c, t, f, polarity, add_new_clauses)
+  LB_Preprocess(lits, coeffs)
+  LinearBound(lits, coeffs, lo, hi, preprocess, polarity)
+  Not(x, polarity, add_new_clauses)
+  Or(f, g, polarity, add_new_clauses)
+  Prevent(func)
+  Require(func)
+  Xor(f, g, polarity, add_new_clauses)
+  as_list()
+  assign(vals)
+  get_clause_count()
+  minimize(lits, coeffs, bestsol, trymax)
+  new_var()
+  sat(additional, includeIf, limit)
+}
+class "Clauses" as conda.common.logic.Clauses #burlywood {
+  indices : dict
+  m
+  names : dict
+  unsat
+  All(iter, polarity, name)
+  And(f, g, polarity, name)
+  Any(vals, polarity, name)
+  AtMostOne(vals, polarity, name)
+  AtMostOne_BDD(vals, polarity, name)
+  AtMostOne_NSQ(vals, polarity, name)
+  ExactlyOne(vals, polarity, name)
+  ExactlyOne_BDD(vals, polarity, name)
+  ExactlyOne_NSQ(vals, polarity, name)
+  ITE(c, t, f, polarity, name)
+  LinearBound(equation, lo, hi, preprocess, polarity, name)
+  Not(x, polarity, name)
+  Or(f, g, polarity, name)
+  Prevent(what)
+  Require(what)
+  Xor(f, g, polarity, name)
+  add_clause(clause)
+  add_clauses(clauses)
+  as_list()
+  from_index(m)
+  from_name(name)
+  get_clause_count()
+  itersolve(constraints, m)
+  minimize(objective, bestsol, trymax)
+  name_var(m, name)
+  new_var(name)
+  sat(additional, includeIf, names, limit)
+}
+class "<color:red>ClobberError</color>" as conda.exceptions.ClobberError #aliceblue {
+  path_conflict
+}
+class "CmdExeActivator" as conda.activate.CmdExeActivator #aliceblue {
+  command_join : str
+  export_var_tmpl : str
+  hook_source_path : NoneType
+  path_conversion
+  pathsep_join
+  run_script_tmpl : str
+  script_extension : str
+  sep : str
+  set_var_tmpl : str
+  tempfile_extension : str
+  unset_var_tmpl : str
+}
+class "Collection" as _collections_abc.Collection #grey {
+}
+class "<color:red>CommandArgumentError</color>" as conda.exceptions.CommandArgumentError #aliceblue {
+  return_code : int
+}
+class "<color:red>CommandNotFoundError</color>" as conda.exceptions.CommandNotFoundError #aliceblue {
+}
+class "Commands" as conda.cli.python_api.Commands #aquamarine {
+  CLEAN : str
+  CONFIG : str
+  CREATE : str
+  HELP : str
+  INFO : str
+  INSTALL : str
+  LIST : str
+  REMOVE : str
+  RUN : str
+  SEARCH : str
+  UPDATE : str
+}
+class "Comparable" as conda._vendor.tqdm.utils.Comparable #antiquewhite {
+}
+class "CompileMultiPycAction" as conda.core.path_actions.CompileMultiPycAction #chocolate {
+  package_info
+  prefix_path_data : NoneType
+  prefix_paths_data
+  source_full_paths
+  source_short_paths
+  target_full_paths
+  target_prefix
+  target_short_paths
+  transaction_context
+  cleanup()
+  create_actions(cls, transaction_context, package_info, target_prefix, requested_link_type, file_link_actions)
+  execute()
+  reverse()
+  verify()
+}
+class "ComposableField" as conda._vendor.auxlib.entity.ComposableField #forestgreen {
+  box(instance, instance_type, val)
+  dump(instance, instance_type, val)
+}
+class "<color:red>CondaDependencyError</color>" as conda.exceptions.CondaDependencyError #aliceblue {
+}
+class "<color:red>CondaEnvironmentError</color>" as conda.exceptions.CondaEnvironmentError #aliceblue {
+}
+class "<color:red>CondaError</color>" as conda.CondaError #aliceblue {
+  message
+  reportable : bool
+  return_code : int
+  dump_map()
+}
+class "<color:red>CondaExitZero</color>" as conda.CondaExitZero #aliceblue {
+  return_code : int
+}
+class "<color:red>CondaFileIOError</color>" as conda.exceptions.CondaFileIOError #aliceblue {
+  filepath
+}
+class "<color:red>CondaHTTPError</color>" as conda.exceptions.CondaHTTPError #aliceblue {
+}
+class "<color:red>CondaHistoryError</color>" as conda.exceptions.CondaHistoryError #aliceblue {
+}
+class "<color:red>CondaHistoryWarning</color>" as conda.history.CondaHistoryWarning #aliceblue {
+}
+class "CondaHttpAuth" as conda.gateways.connection.session.CondaHttpAuth #cornflowerblue {
+  add_binstar_token(url)
+  handle_407(response)
+}
+class "<color:red>CondaIOError</color>" as conda.exceptions.CondaIOError #aliceblue {
+}
+class "<color:red>CondaImportError</color>" as conda.exceptions.CondaImportError #aliceblue {
+}
+class "<color:red>CondaIndexError</color>" as conda.exceptions.CondaIndexError #aliceblue {
+}
+class "<color:red>CondaKeyError</color>" as conda.exceptions.CondaKeyError #aliceblue {
+  key
+  msg
+}
+class "<color:red>CondaMemoryError</color>" as conda.exceptions.CondaMemoryError #aliceblue {
+}
+class "<color:red>CondaMultiError</color>" as conda.CondaMultiError #aliceblue {
+  errors
+  contains(exception_class)
+  dump_map()
+}
+class "<color:red>CondaOSError</color>" as conda.exceptions.CondaOSError #aliceblue {
+}
+class "<color:red>CondaRevisionError</color>" as conda.exceptions.CondaRevisionError #aliceblue {
+}
+class "CondaSession" as conda.gateways.connection.session.CondaSession #cornflowerblue {
+  auth
+  cert : tuple
+  verify
+}
+class "CondaSessionType" as conda.gateways.connection.session.CondaSessionType #cornflowerblue {
+}
+class "<color:red>CondaSignalInterrupt</color>" as conda.exceptions.CondaSignalInterrupt #aliceblue {
+}
+class "<color:red>CondaSystemExit</color>" as conda.exceptions.CondaSystemExit #aliceblue {
+}
+class "<color:red>CondaTypeError</color>" as conda.exceptions.CondaTypeError #aliceblue {
+}
+class "<color:red>CondaUpgradeError</color>" as conda.exceptions.CondaUpgradeError #aliceblue {
+}
+class "<color:red>CondaValueError</color>" as conda.exceptions.CondaValueError #aliceblue {
+}
+class "<color:red>CondaVerificationError</color>" as conda.exceptions.CondaVerificationError #aliceblue {
+}
+class "Condition" as threading.Condition #grey {
+  acquire
+  notifyAll
+  release
+  notify(n)
+  notify_all()
+  wait(timeout)
+  wait_for(predicate, timeout)
+}
+class "Configuration" as conda.common.configuration.Configuration #burlywood {
+  raw_data
+  check_source(source)
+  collect_all()
+  describe_parameter(parameter_name)
+  get_descriptions()
+  list_parameters()
+  post_build_validation()
+  register_reset_callaback(callback)
+  typify_parameter(parameter_name, value, source)
+  validate_all()
+  validate_configuration()
+}
+class "<color:red>ConfigurationError</color>" as conda.common.configuration.ConfigurationError #burlywood {
+}
+class "<color:red>ConfigurationLoadError</color>" as conda.common.configuration.ConfigurationLoadError #burlywood {
+}
+class "ConfigurationObject" as conda.common.configuration.ConfigurationObject #burlywood {
+}
+class "ConfigurationType" as conda.common.configuration.ConfigurationType #burlywood {
+}
+class "Container" as _collections_abc.Container #grey {
+}
+class "Context" as conda.base.context.Context #antiquewhite {
+  active_prefix
+  add_anaconda_token
+  add_pip_as_python_dependency
+  aggressive_update_packages
+  allow_conda_downgrades
+  allow_cycles
+  allow_non_channel_urls
+  allow_softlinks
+  always_copy
+  always_softlink
+  always_yes
+  anaconda_upload
+  arch_name
+  auto_activate_base
+  auto_stack
+  auto_update_conda
+  av_data_dir
+  binstar_upload
+  bits
+  bld_path
+  category_map
+  changeps1
+  channel_priority
+  channels
+  client_ssl_cert
+  client_ssl_cert_key
+  clobber
+  conda_build
+  conda_build_local_paths
+  conda_build_local_urls
+  conda_exe
+  conda_exe_vars_dict
+  conda_prefix
+  conda_private
+  config_files
+  create_default_packages
+  croot
+  debug
+  default_prefix
+  default_python
+  default_threads
+  deps_modifier
+  dev
+  dev : bool
+  disallowed_packages
+  download_only
+  dry_run
+  enable_private_envs
+  env_prompt
+  envs_dirs
+  error_upload_url
+  execute_threads
+  extra_safety_checks
+  force
+  force_32bit
+  force_reinstall
+  force_remove
+  ignore_pinned
+  json
+  local_build_root
+  local_repodata_ttl
+  migrated_channel_aliases
+  migrated_custom_channels
+  non_admin_enabled
+  notify_outdated_conda
+  offline
+  override_channels_enabled
+  path_conflict
+  pinned_packages
+  pip_interop_enabled
+  pkgs_dirs
+  platform
+  prefix_specified
+  proxy_servers
+  quiet
+  remote_backoff_factor
+  remote_connect_timeout_secs
+  remote_max_retries
+  remote_read_timeout_secs
+  repodata_fns
+  repodata_threads
+  report_errors
+  restore_free_channel
+  rollback_enabled
+  root_dir
+  root_writable
+  safety_checks
+  sat_solver
+  separate_format_cache
+  shlvl
+  shortcuts
+  show_channel_urls
+  signing_metadata_url_base
+  solver_ignore_timestamps
+  ssl_verify
+  subdir
+  subdirs
+  target_prefix
+  target_prefix_override
+  track_features
+  unsatisfiable_hints
+  unsatisfiable_hints_check_depth
+  update_modifier
+  use_index_cache
+  use_local
+  use_only_tar_bz2
+  verbosity
+  verify_threads
+  whitelist_channels
+  channel_alias()
+  cpu_flags()
+  cuda_version()
+  custom_channels()
+  custom_multichannels()
+  default_channels()
+  description_map()
+  get_descriptions()
+  known_subdirs()
+  libc_family_version()
+  os_distribution_name_version()
+  platform_system_release()
+  post_build_validation()
+  python_implementation_name_version()
+  requests_version()
+  root_prefix()
+  trash_dir()
+  user_agent()
+}
+class "ContextDecorator" as conda.common.io.ContextDecorator #burlywood {
+}
+class "ContextStack" as conda.base.context.ContextStack #antiquewhite {
+  apply()
+  pop()
+  push(search_path, argparse_args)
+  replace(search_path, argparse_args)
+}
+class "ContextStackObject" as conda.base.context.ContextStackObject #antiquewhite {
+  argparse_args : NoneType
+  search_path : tuple
+  apply()
+  set_value(search_path, argparse_args)
+}
+class "CookieJar" as http.cookiejar.CookieJar #grey {
+  domain_re
+  dots_re
+  magic_re
+  non_word_re
+  quote_re
+  strict_domain_re
+  add_cookie_header(request)
+  clear(domain, path, name)
+  clear_expired_cookies()
+  clear_session_cookies()
+  extract_cookies(response, request)
+  make_cookies(response, request)
+  set_cookie(cookie)
+  set_cookie_if_ok(cookie, request)
+  set_policy(policy)
+}
+class "CookiePolicy" as http.cookiejar.CookiePolicy #grey {
+  domain_return_ok(domain, request)
+  path_return_ok(path, request)
+  return_ok(cookie, request)
+  set_ok(cookie, request)
+}
+class "<color:red>CorruptedEnvironmentError</color>" as conda.exceptions.CorruptedEnvironmentError #aliceblue {
+}
+class "<color:red>CouldntParseError</color>" as conda.exceptions.CouldntParseError #aliceblue {
+  reason
+}
+class "CreateInPrefixPathAction" as conda.core.path_actions.CreateInPrefixPathAction #chocolate {
+  package_info
+  source_full_path
+  source_prefix
+  source_short_path
+  cleanup()
+  verify()
+}
+class "CreateNonadminAction" as conda.core.path_actions.CreateNonadminAction #chocolate {
+  create_actions(cls, transaction_context, package_info, target_prefix, requested_link_type)
+  execute()
+  reverse()
+}
+class "CreatePrefixRecordAction" as conda.core.path_actions.CreatePrefixRecordAction #chocolate {
+  all_link_path_actions : list
+  prefix_record
+  requested_link_type
+  requested_spec
+  create_actions(cls, transaction_context, package_info, target_prefix, requested_link_type, requested_spec, all_link_path_actions)
+  execute()
+  reverse()
+}
+class "CreatePythonEntryPointAction" as conda.core.path_actions.CreatePythonEntryPointAction #chocolate {
+  func
+  module
+  prefix_path_data
+  create_actions(cls, transaction_context, package_info, target_prefix, requested_link_type)
+  execute()
+  reverse()
+}
+class "CrossPlatformStLink" as conda.gateways.disk.link.CrossPlatformStLink #darkgoldenrod {
+  st_nlink(cls, path)
+}
+class "CshActivator" as conda.activate.CshActivator #aliceblue {
+  command_join : str
+  export_var_tmpl : str
+  hook_source_path
+  path_conversion
+  pathsep_join
+  run_script_tmpl : str
+  script_extension : str
+  sep : str
+  set_var_tmpl : str
+  tempfile_extension : NoneType
+  unset_var_tmpl : str
+}
+class "<color:red>CustomValidationError</color>" as conda.common.configuration.CustomValidationError #burlywood {
+}
+class "<color:red>CyclicalDependencyError</color>" as conda.exceptions.CyclicalDependencyError #aliceblue {
+}
+class "<color:red>DeactivateHelp</color>" as conda.exceptions.DeactivateHelp #aliceblue {
+}
+class "DefaultCookiePolicy" as http.cookiejar.DefaultCookiePolicy #grey {
+  DomainLiberal : int
+  DomainRFC2965Match : int
+  DomainStrict : int
+  DomainStrictNoDots : int
+  DomainStrictNonDomain : int
+  hide_cookie2 : bool
+  netscape : bool
+  rfc2109_as_netscape : NoneType
+  rfc2965 : bool
+  secure_protocols : tuple
+  strict_domain : bool
+  strict_ns_domain : int
+  strict_ns_set_initial_dollar : bool
+  strict_ns_set_path : bool
+  strict_ns_unverifiable : bool
+  strict_rfc2965_unverifiable : bool
+  allowed_domains()
+  blocked_domains()
+  domain_return_ok(domain, request)
+  is_blocked(domain)
+  is_not_allowed(domain)
+  path_return_ok(path, request)
+  return_ok(cookie, request)
+  return_ok_domain(cookie, request)
+  return_ok_expires(cookie, request)
+  return_ok_port(cookie, request)
+  return_ok_secure(cookie, request)
+  return_ok_verifiability(cookie, request)
+  return_ok_version(cookie, request)
+  set_allowed_domains(allowed_domains)
+  set_blocked_domains(blocked_domains)
+  set_ok(cookie, request)
+  set_ok_domain(cookie, request)
+  set_ok_name(cookie, request)
+  set_ok_path(cookie, request)
+  set_ok_port(cookie, request)
+  set_ok_verifiability(cookie, request)
+  set_ok_version(cookie, request)
+}
+class "DefaultValueRawParameter" as conda.common.configuration.DefaultValueRawParameter #burlywood {
+  keyflag()
+  value(parameter_obj)
+  valueflags(parameter_obj)
+}
+class "DeltaSecondsFormatter" as conda.common.io.DeltaSecondsFormatter #burlywood {
+  prev_time
+  format(record)
+}
+class "DepsModifier" as conda.base.constants.DepsModifier #antiquewhite {
+  name
+}
+class "DictSafeMixin" as conda._vendor.auxlib.entity.DictSafeMixin #forestgreen {
+  copy()
+  get(item, default)
+  items()
+  iteritems()
+  setdefault(key, default_value)
+  update(E)
+}
+class "DirectoryLock" as conda.lock.DirectoryLock #aliceblue {
+  directory_path : bytes, str
+  lock_file_glob_str
+  lock_file_path
+  retries : int
+}
+class "<color:red>DirectoryNotACondaEnvironmentError</color>" as conda.exceptions.DirectoryNotACondaEnvironmentError #aliceblue {
+}
+class "<color:red>DirectoryNotFoundError</color>" as conda.exceptions.DirectoryNotFoundError #aliceblue {
+}
+class "DisableOnWriteError" as conda._vendor.tqdm.utils.DisableOnWriteError #antiquewhite {
+  disable_on_exception(tqdm_instance, func)
+}
+class "<color:red>DisallowedPackageError</color>" as conda.exceptions.DisallowedPackageError #aliceblue {
+}
+class "Dist" as conda.models.dist.Dist #darkseagreen {
+  base_url
+  build
+  build_number
+  build_string
+  channel
+  dist_name
+  fmt
+  fn
+  full_name
+  is_channel
+  is_feature_package
+  name
+  pair
+  platform
+  quad
+  subdir
+  version
+  from_string(cls, string, channel_override)
+  from_url(cls, url)
+  parse_dist_name(string)
+  rsplit(sep, maxsplit)
+  split(sep, maxsplit)
+  startswith(match)
+  to_filename(extension)
+  to_match_spec()
+  to_matchspec()
+  to_package_ref()
+  to_url()
+}
+class "DistType" as conda.models.dist.DistType #darkseagreen {
+}
+class "<color:red>DryRunExit</color>" as conda.exceptions.DryRunExit #aliceblue {
+}
+class "DummyExecutor" as conda.common.io.DummyExecutor #burlywood {
+  map(func)
+  shutdown(wait)
+  submit(fn)
+}
+class "EMA" as conda._vendor.tqdm.std.EMA #antiquewhite {
+  alpha : float
+  calls : int
+  last : int
+}
+class "ERROR" as conda.common._os.windows.ERROR #cadetblue {
+  name
+}
+class "<color:red>EncodingError</color>" as conda.exceptions.EncodingError #aliceblue {
+}
+class "EnforceUnusedAdapter" as conda.gateways.connection.session.EnforceUnusedAdapter #cornflowerblue {
+  close()
+  send(request)
+}
+class "Entity" as conda._vendor.auxlib.entity.Entity #forestgreen {
+  dump()
+  from_json(cls, json_str)
+  from_objects(cls)
+  json(indent, separators)
+  load(cls, data_dict)
+  pretty_json(indent, separators)
+  validate()
+}
+class "EntityType" as conda._vendor.auxlib.entity.EntityType #forestgreen {
+  fields
+}
+class "Enum" as enum.Enum #grey {
+  name()
+  value()
+}
+class "EnumField" as conda._vendor.auxlib.entity.EnumField #forestgreen {
+  box(instance, instance_type, val)
+  dump(instance, instance_type, val)
+}
+class "EnumMeta" as enum.EnumMeta #grey {
+}
+class "EnvRawParameter" as conda.common.configuration.EnvRawParameter #burlywood {
+  source : str
+  keyflag()
+  make_raw_parameters(cls, appname)
+  value(parameter_obj)
+  valueflags(parameter_obj)
+}
+class "<color:red>EnvironmentLocationNotFound</color>" as conda.exceptions.EnvironmentLocationNotFound #aliceblue {
+}
+class "<color:red>EnvironmentNameNotFound</color>" as conda.exceptions.EnvironmentNameNotFound #aliceblue {
+}
+class "<color:red>EnvironmentNotWritableError</color>" as conda.exceptions.EnvironmentNotWritableError #aliceblue {
+}
+class "Evaluator" as conda.common.pkg_formats.python.Evaluator #chartreuse {
+  operations : dict
+  evaluate(expr, context)
+}
+class "Event" as threading.Event #grey {
+  isSet
+  clear()
+  is_set()
+  set()
+  wait(timeout)
+}
+class "ExactLowerStrMatch" as conda.models.match_spec.ExactLowerStrMatch #darkseagreen {
+  match(other)
+}
+class "ExactStrMatch" as conda.models.match_spec.ExactStrMatch #darkseagreen {
+  match(other)
+}
+class "ExceptionHandler" as conda.exceptions.ExceptionHandler #aliceblue {
+  error_upload_url
+  http_timeout
+  user_agent
+  ask_for_upload()
+  get_error_report(exc_val, exc_tb)
+  handle_application_exception(exc_val, exc_tb)
+  handle_exception(exc_val, exc_tb)
+  handle_reportable_application_exception(exc_val, exc_tb)
+  handle_unexpected_exception(exc_val, exc_tb)
+  print_expected_error_report(error_report)
+  print_unexpected_error_report(error_report)
+  print_upload_confirm(do_upload, ask_for_upload, ask_response)
+  write_out(content_str)
+}
+class "Executor" as concurrent.futures._base.Executor #grey {
+  map(fn)
+  shutdown(wait)
+  submit()
+}
+class "ExtractPackageAction" as conda.core.path_actions.ExtractPackageAction #chocolate {
+  hold_path
+  md5
+  record_or_spec
+  sha256
+  size
+  source_full_path
+  target_extracted_dirname
+  target_full_path
+  target_pkgs_dir
+  cleanup()
+  execute(progress_update_callback)
+  reverse()
+  verify()
+}
+class "FILETIME" as conda.gateways.disk.link.CrossPlatformStLink._initialize.FILETIME #mediumspringgreen {
+}
+class "FTP" as ftplib.FTP #grey {
+  af
+  debug
+  debugging
+  debugging : int
+  encoding : str
+  file : NoneType
+  file : NoneType
+  host : str
+  host : str
+  lastresp
+  maxline : int
+  passiveserver
+  passiveserver : int
+  port : int
+  port : int
+  sock : NoneType
+  sock : NoneType
+  source_address : NoneType
+  timeout : int, object
+  trust_server_pasv_ipv4_address : bool
+  welcome
+  welcome : NoneType
+  abort()
+  acct(password)
+  close()
+  connect(host, port, timeout, source_address)
+  cwd(dirname)
+  delete(filename)
+  dir()
+  getline()
+  getmultiline()
+  getresp()
+  getwelcome()
+  login(user, passwd, acct)
+  makepasv()
+  makeport()
+  mkd(dirname)
+  mlsd(path, facts)
+  nlst()
+  ntransfercmd(cmd, rest)
+  putcmd(line)
+  putline(line)
+  pwd()
+  quit()
+  rename(fromname, toname)
+  retrbinary(cmd, callback, blocksize, rest)
+  retrlines(cmd, callback)
+  rmd(dirname)
+  sanitize(s)
+  sendcmd(cmd)
+  sendeprt(host, port)
+  sendport(host, port)
+  set_debuglevel(level)
+  set_pasv(val)
+  size(filename)
+  storbinary(cmd, fp, blocksize, callback, rest)
+  storlines(cmd, fp, callback)
+  transfercmd(cmd, rest)
+  voidcmd(cmd)
+  voidresp()
+}
+class "FTPAdapter" as conda.gateways.connection.adapters.ftp.FTPAdapter #cyan {
+  conn
+  func_table : dict
+  close()
+  get_host_and_path_from_url(request)
+  get_username_password_from_header(request)
+  list(path, request)
+  nlst(path, request)
+  retr(path, request)
+  send(request)
+  stor(path, request)
+}
+class "FeatureMatch" as conda.models.match_spec.FeatureMatch #darkseagreen {
+  exact_value
+  match(other)
+}
+class "Field" as conda._vendor.auxlib.entity.Field #forestgreen {
+  default
+  default_in_dump
+  immutable
+  in_dump
+  is_nullable
+  name
+  nullable
+  required
+  type
+  box(instance, instance_type, val)
+  dump(instance, instance_type, val)
+  set_name(name)
+  unbox(instance, instance_type, val)
+  validate(instance, val)
+}
+class "FileLock" as conda.lock.FileLock #aliceblue {
+  lock_file_glob_str
+  lock_file_path
+  path_to_lock : bytes, str
+  retries : int
+}
+class "FileMode" as conda.models.enums.FileMode #darkseagreen {
+  name
+}
+class "FilenameField" as conda.models.records.FilenameField #darkseagreen {
+}
+class "Filter" as logging.Filter #grey {
+  name : str
+  nlen
+  filter(record)
+}
+class "Filterer" as logging.Filterer #grey {
+  filters : list
+  addFilter(filter)
+  filter(record)
+  removeFilter(filter)
+}
+class "FishActivator" as conda.activate.FishActivator #aliceblue {
+  command_join : str
+  export_var_tmpl : str
+  hook_source_path
+  path_conversion
+  pathsep_join
+  run_script_tmpl : str
+  script_extension : str
+  sep : str
+  set_var_tmpl : str
+  tempfile_extension : NoneType
+  unset_var_tmpl : str
+}
+class "Formatter" as logging.Formatter #grey {
+  converter
+  datefmt : NoneType
+  default_msec_format : str
+  default_time_format : str
+  format(record)
+  formatException(ei)
+  formatMessage(record)
+  formatStack(stack_info)
+  formatTime(record, datefmt)
+  usesTime()
+}
+class "GeneralGraph" as conda.models.prefix_graph.GeneralGraph #darkseagreen {
+  graph_by_name
+  specs_by_name
+  breadth_first_search_by_name(root_spec, target_spec)
+}
+class "<color:red>GenericHelp</color>" as conda.exceptions.GenericHelp #aliceblue {
+}
+class "GlobLowerStrMatch" as conda.models.match_spec.GlobLowerStrMatch #darkseagreen {
+}
+class "GlobStrMatch" as conda.models.match_spec.GlobStrMatch #darkseagreen {
+  exact_value
+  matches_all
+  match(other)
+}
+class "Handler" as logging.Handler #grey {
+  formatter : NoneType
+  level : int
+  lock
+  name
+  acquire()
+  close()
+  createLock()
+  emit(record)
+  flush()
+  format(record)
+  get_name()
+  handle(record)
+  handleError(record)
+  release()
+  setFormatter(fmt)
+  setLevel(level)
+  set_name(name)
+}
+class "<color:red>Help</color>" as conda.exceptions.Help #aliceblue {
+}
+class "HelpFormatter" as argparse.HelpFormatter #grey {
+  add_argument(action)
+  add_arguments(actions)
+  add_text(text)
+  add_usage(usage, actions, groups, prefix)
+  end_section()
+  format_help()
+  start_section(heading)
+}
+class "History" as conda.history.History #aliceblue {
+  com_pat
+  conda_v_pat
+  meta_dir
+  path
+  prefix
+  spec_pat
+  construct_states()
+  file_is_empty()
+  get_requested_specs_map()
+  get_state(rev)
+  get_user_requests()
+  init_log_file()
+  object_log()
+  parse()
+  print_log()
+  update()
+  write_changes(last_state, current_state)
+  write_specs(remove_specs, update_specs, neutered_specs)
+}
+class "IOBase" as io.IOBase #grey {
+}
+class "ImmutableEntity" as conda._vendor.auxlib.entity.ImmutableEntity #forestgreen {
+}
+class "IndexedSet" as conda._vendor.boltons.setutils.IndexedSet #aquamarine {
+  dead_indices : list
+  item_index_map : dict
+  item_list : list
+  add(item)
+  clear()
+  count(val)
+  difference()
+  difference_update()
+  discard(item)
+  from_iterable(cls, it)
+  index(val)
+  intersection()
+  intersection_update()
+  isdisjoint(other)
+  issubset(other)
+  issuperset(other)
+  iter_difference()
+  iter_intersection()
+  iter_slice(start, stop, step)
+  pop(index)
+  remove(item)
+  reverse()
+  sort()
+  symmetric_difference()
+  symmetric_difference_update(other)
+  union()
+  update()
+}
+class "<color:red>InstallError</color>" as conda.exceptions.InstallError #aliceblue {
+}
+class "IntEnum" as enum.IntEnum #grey {
+}
+class "IntegerField" as conda._vendor.auxlib.entity.IntegerField #forestgreen {
+}
+class "<color:red>InvalidElementTypeError</color>" as conda.common.configuration.InvalidElementTypeError #burlywood {
+}
+class "<color:red>InvalidMatchSpec</color>" as conda.exceptions.InvalidMatchSpec #aliceblue {
+}
+class "<color:red>InvalidSpec</color>" as conda.exceptions.InvalidSpec #aliceblue {
+}
+class "<color:red>InvalidTypeError</color>" as conda.common.configuration.InvalidTypeError #burlywood {
+  valid_types
+  wrong_type
+}
+class "<color:red>InvalidVersionSpec</color>" as conda.exceptions.InvalidVersionSpec #aliceblue {
+}
+class "Iterable" as _collections_abc.Iterable #grey {
+}
+class "JSONFormatMixin" as conda.activate.JSONFormatMixin #aliceblue {
+  command_join : list
+  pathsep_join : list
+  tempfile_extension : NoneType
+  get_scripts_export_unset_vars()
+}
+class "<color:red>KnownPackageClobberError</color>" as conda.exceptions.KnownPackageClobberError #aliceblue {
+}
+class "LeasedPathEntry" as conda.models.leased_path_entry.LeasedPathEntry #darkseagreen {
+  leased_path
+  leased_path_type
+  package_name
+  target_path
+  target_prefix
+}
+class "LeasedPathType" as conda.models.enums.LeasedPathType #darkseagreen {
+  name
+}
+class "Link" as conda.models.records.Link #darkseagreen {
+  source
+  type
+}
+class "<color:red>LinkError</color>" as conda.exceptions.LinkError #aliceblue {
+}
+class "LinkPathAction" as conda.core.path_actions.LinkPathAction #chocolate {
+  link_type
+  prefix_path_data : NoneType
+  source_path_data
+  create_directory_actions(cls, transaction_context, package_info, target_prefix, requested_link_type, file_link_actions)
+  create_file_link_actions(cls, transaction_context, package_info, target_prefix, requested_link_type)
+  create_python_entry_point_windows_exe_action(cls, transaction_context, package_info, target_prefix, requested_link_type, entry_point_def)
+  execute()
+  reverse()
+  verify()
+}
+class "LinkType" as conda.models.enums.LinkType #darkseagreen {
+  name
+}
+class "LinkTypeField" as conda.models.records.LinkTypeField #darkseagreen {
+  box(instance, instance_type, val)
+}
+class "ListField" as conda._vendor.auxlib.entity.ListField #forestgreen {
+  box(instance, instance_type, val)
+  dump(instance, instance_type, val)
+  unbox(instance, instance_type, val)
+  validate(instance, val)
+}
+class "LoadedParameter" as conda.common.configuration.LoadedParameter #burlywood {
+  key_flag
+  value
+  value_flags
+  collect_errors(instance, typed_value, source)
+  expand()
+  merge(matches)
+  typify(source)
+}
+class "LocalFSAdapter" as conda.gateways.connection.adapters.localfs.LocalFSAdapter #cyan {
+  close()
+  send(request, stream, timeout, verify, cert, proxies)
+}
+class "<color:red>LockError</color>" as conda.exceptions.LockError #aliceblue {
+}
+class "MakeMenuAction" as conda.core.path_actions.MakeMenuAction #chocolate {
+  create_actions(cls, transaction_context, package_info, target_prefix, requested_link_type)
+  execute()
+  reverse()
+}
+class "MapLoadedParameter" as conda.common.configuration.MapLoadedParameter #burlywood {
+  collect_errors(instance, typed_value, source)
+  merge(matches)
+}
+class "MapParameter" as conda.common.configuration.MapParameter #burlywood {
+  get_all_matches(name, names, instance)
+  load(name, match)
+}
+class "Mapping" as _collections_abc.Mapping #grey {
+  get(key, default)
+  items()
+  keys()
+  values()
+}
+class "MatchInterface" as conda.models.match_spec.MatchInterface #darkseagreen {
+  exact_value
+  raw_value
+  match(other)
+  matches(value)
+  merge(other)
+  union(other)
+}
+class "MatchSpec" as conda.models.match_spec.MatchSpec #darkseagreen {
+  FIELD_NAMES : tuple
+  FIELD_NAMES_SET : frozenset
+  fn
+  is_name_only_spec
+  name
+  optional
+  original_spec_str
+  spec
+  strictness
+  target
+  version
+  conda_build_form()
+  dist_str()
+  from_dist_str(cls, dist_str)
+  get(field_name, default)
+  get_exact_value(field_name)
+  get_raw_value(field_name)
+  match(rec)
+  merge(cls, match_specs, union)
+  union(cls, match_specs)
+}
+class "MatchSpecType" as conda.models.match_spec.MatchSpecType #darkseagreen {
+}
+class "Md5Field" as conda.models.records.Md5Field #darkseagreen {
+}
+class "MetadataSignatureStatus" as conda.models.enums.MetadataSignatureStatus #darkseagreen {
+  name
+}
+class "<color:red>MetadataWarning</color>" as conda.common.pkg_formats.python.MetadataWarning #chartreuse {
+}
+class "MultiChannel" as conda.models.channel.MultiChannel #darkseagreen {
+  auth : NoneType
+  base_url
+  base_urls
+  canonical_name
+  channel_location
+  location : NoneType
+  name
+  package_filename : NoneType
+  platform : NoneType
+  scheme : NoneType
+  token : NoneType
+  dump()
+  url(with_credentials)
+  urls(with_credentials, subdirs)
+}
+class "MultiPathAction" as conda.core.path_actions.MultiPathAction #chocolate {
+  target_full_paths
+  verified
+  cleanup()
+  execute()
+  reverse()
+  verify()
+}
+class "<color:red>MultiValidationError</color>" as conda.common.configuration.MultiValidationError #burlywood {
+}
+class "<color:red>MultipleKeysError</color>" as conda.common.configuration.MultipleKeysError #burlywood {
+  keys
+  source
+}
+class "MutableMapping" as _collections_abc.MutableMapping #grey {
+  clear()
+  pop(key, default)
+  popitem()
+  setdefault(key, default)
+  update()
+}
+class "MutableSet" as _collections_abc.MutableSet #grey {
+  add(value)
+  clear()
+  discard(value)
+  pop()
+  remove(value)
+}
+class "<color:red>NoBaseEnvironmentError</color>" as conda.exceptions.NoBaseEnvironmentError #aliceblue {
+}
+class "<color:red>NoSpaceLeftError</color>" as conda.exceptions.NoSpaceLeftError #aliceblue {
+}
+class "<color:red>NoWritableEnvsDirError</color>" as conda.exceptions.NoWritableEnvsDirError #aliceblue {
+}
+class "<color:red>NoWritablePkgsDirError</color>" as conda.exceptions.NoWritablePkgsDirError #aliceblue {
+}
+class "Noarch" as conda.models.package_info.Noarch #darkseagreen {
+  entry_points
+  type
+}
+class "NoarchField" as conda.models.records.NoarchField #darkseagreen {
+  box(instance, instance_type, val)
+}
+class "NoarchField" as conda.models.package_info.NoarchField #darkseagreen {
+  box(instance, instance_type, val)
+}
+class "NoarchType" as conda.models.enums.NoarchType #darkseagreen {
+  name
+  coerce(val)
+}
+class "<color:red>NotWritableError</color>" as conda.exceptions.NotWritableError #aliceblue {
+}
+class "NullCountAction" as conda.cli.conda_argparse.NullCountAction #aquamarine {
+}
+class "NumberField" as conda._vendor.auxlib.entity.NumberField #forestgreen {
+}
+class "ObjectLoadedParameter" as conda.common.configuration.ObjectLoadedParameter #burlywood {
+  collect_errors(instance, typed_value, source)
+  merge(matches)
+}
+class "ObjectParameter" as conda.common.configuration.ObjectParameter #burlywood {
+  get_all_matches(name, names, instance)
+  load(name, match)
+}
+class "ObjectWrapper" as conda._vendor.tqdm.utils.ObjectWrapper #antiquewhite {
+  wrapper_getattr(name)
+  wrapper_setattr(name, value)
+}
+class "<color:red>OperationNotAllowed</color>" as conda.exceptions.OperationNotAllowed #aliceblue {
+}
+class "OrderedDict" as collections.OrderedDict #grey {
+  move_to_end(key, last)
+}
+class "PackageCacheData" as conda.core.package_cache_data.PackageCacheData #chocolate {
+  is_writable
+  pkgs_dir
+  all_caches_writable_first(cls, pkgs_dirs)
+  clear(cls)
+  first_writable(cls, pkgs_dirs)
+  get(package_ref, default)
+  get_all_extracted_entries(cls)
+  get_entry_to_link(cls, package_ref)
+  insert(package_cache_record)
+  iter_records()
+  itervalues()
+  load()
+  query(package_ref_or_match_spec)
+  query_all(cls, package_ref_or_match_spec, pkgs_dirs)
+  read_only_caches(cls, pkgs_dirs)
+  reload()
+  remove(package_ref, default)
+  tarball_file_in_cache(cls, tarball_path, md5sum, exclude_caches)
+  tarball_file_in_this_cache(tarball_path, md5sum)
+  values()
+  writable_caches(cls, pkgs_dirs)
+}
+class "PackageCacheRecord" as conda.models.records.PackageCacheRecord #darkseagreen {
+  extracted_package_dir
+  is_extracted
+  is_fetched
+  md5
+  package_tarball_full_path
+  tarball_basename
+}
+class "PackageCacheType" as conda.core.package_cache_data.PackageCacheType #chocolate {
+}
+class "PackageInfo" as conda.models.package_info.PackageInfo #darkseagreen {
+  build
+  build_number
+  channel
+  extracted_package_dir
+  icondata
+  name
+  package_metadata
+  package_tarball_full_path
+  paths_data
+  repodata_record
+  url
+  version
+  dist_str()
+}
+class "PackageMetadata" as conda.models.package_info.PackageMetadata #darkseagreen {
+  noarch
+  package_metadata_version
+  preferred_env
+}
+class "<color:red>PackageNotInstalledError</color>" as conda.exceptions.PackageNotInstalledError #aliceblue {
+}
+class "PackageRecord" as conda.models.records.PackageRecord #darkseagreen {
+  arch
+  build
+  build_number
+  channel
+  combined_depends
+  constrains
+  date
+  depends
+  features
+  fn
+  is_unmanageable
+  legacy_bz2_md5
+  legacy_bz2_size
+  license
+  license_family
+  md5
+  metadata_signature_status
+  name
+  namekey
+  noarch
+  package_type
+  platform
+  preferred_env
+  schannel
+  sha256
+  size
+  subdir
+  timestamp
+  track_features
+  url
+  version
+  dist_fields_dump()
+  dist_str()
+  record_id()
+  to_match_spec()
+  to_simple_match_spec()
+}
+class "PackageType" as conda.models.enums.PackageType #darkseagreen {
+  name
+  conda_package_types()
+  unmanageable_package_types()
+}
+class "PackageTypeField" as conda.models.records.PackageTypeField #darkseagreen {
+}
+class "<color:red>PackagesNotFoundError</color>" as conda.exceptions.PackagesNotFoundError #aliceblue {
+}
+class "<color:red>PaddingError</color>" as conda.exceptions.PaddingError #aliceblue {
+}
+class "Parameter" as conda.common.configuration.Parameter #burlywood {
+  default
+  get_all_matches(name, names, instance)
+  load(name, match)
+  typify(name, source, value)
+}
+class "ParameterFlag" as conda.common.configuration.ParameterFlag #burlywood {
+  name
+  from_name(cls, name)
+  from_string(cls, string)
+  from_value(cls, value)
+}
+class "ParameterLoader" as conda.common.configuration.ParameterLoader #burlywood {
+  aliases : tuple
+  name
+  names
+  type
+  raw_parameters_from_single_source(name, names, raw_parameters)
+}
+class "<color:red>ParseError</color>" as conda.exceptions.ParseError #aliceblue {
+}
+class "PathAction" as conda.core.path_actions.PathAction #chocolate {
+  target_full_path
+  verified
+  cleanup()
+  execute()
+  reverse()
+  verify()
+}
+class "PathConflict" as conda.base.constants.PathConflict #antiquewhite {
+  name
+}
+class "PathData" as conda.models.records.PathData #darkseagreen {
+  file_mode
+  no_link
+  path
+  path_type
+  prefix_placeholder
+}
+class "PathDataV1" as conda.models.records.PathDataV1 #darkseagreen {
+  inode_paths
+  sha256
+  sha256_in_prefix
+  size_in_bytes
+}
+class "<color:red>PathNotFoundError</color>" as conda.exceptions.PathNotFoundError #aliceblue {
+}
+class "PathType" as conda.models.enums.PathType #darkseagreen {
+  name
+  basic_types()
+}
+class "PathsData" as conda.models.records.PathsData #darkseagreen {
+  paths
+  paths_version
+}
+class "PercentStyle" as logging.PercentStyle #grey {
+  asctime_format : str
+  asctime_search : str
+  default_format : str
+  validation_pattern
+  format(record)
+  usesTime()
+  validate()
+}
+class "Platform" as conda.models.enums.Platform #darkseagreen {
+  name
+  from_sys(cls)
+}
+class "PosixActivator" as conda.activate.PosixActivator #aliceblue {
+  command_join : str
+  export_var_tmpl : str
+  hook_source_path
+  path_conversion
+  pathsep_join
+  run_script_tmpl : str
+  script_extension : str
+  sep : str
+  set_var_tmpl : str
+  tempfile_extension : NoneType
+  unset_var_tmpl : str
+}
+class "PowerShellActivator" as conda.activate.PowerShellActivator #aliceblue {
+  command_join : str
+  export_var_tmpl : str
+  hook_source_path
+  path_conversion
+  pathsep_join
+  run_script_tmpl : str
+  script_extension : str
+  sep : str
+  set_var_tmpl : str
+  tempfile_extension : NoneType
+  unset_var_tmpl : str
+}
+class "PreferredEnv" as conda.models.package_info.PreferredEnv #darkseagreen {
+  executable_paths
+  name
+  softlink_paths
+}
+class "PrefixData" as conda.core.prefix_data.PrefixData #chocolate {
+  is_writable
+  prefix_path
+  all_subdir_urls()
+  get(package_name, default)
+  get_environment_env_vars()
+  insert(prefix_record)
+  iter_records()
+  iter_records_sorted()
+  load()
+  query(package_ref_or_match_spec)
+  reload()
+  remove(package_name)
+  set_environment_env_vars(env_vars)
+  unset_environment_env_vars(env_vars)
+}
+class "PrefixDataType" as conda.core.prefix_data.PrefixDataType #chocolate {
+}
+class "PrefixGraph" as conda.models.prefix_graph.PrefixGraph #darkseagreen {
+  graph : dict
+  records
+  spec_matches : dict
+  all_ancestors(node)
+  all_descendants(node)
+  get_node_by_name(name)
+  prune()
+  remove_spec(spec)
+  remove_youngest_descendant_nodes_with_specs()
+}
+class "PrefixPathAction" as conda.core.path_actions.PrefixPathAction #chocolate {
+  target_full_path
+  target_prefix
+  target_short_path
+  target_short_paths
+  transaction_context
+}
+class "PrefixRecord" as conda.models.records.PrefixRecord #darkseagreen {
+  auth
+  extracted_package_dir
+  files
+  link
+  package_tarball_full_path
+  paths_data
+  requested_spec
+}
+class "PrefixReplaceLinkAction" as conda.core.path_actions.PrefixReplaceLinkAction #chocolate {
+  file_mode
+  intermediate_path : NoneType
+  prefix_path_data
+  prefix_placeholder
+  execute()
+  verify()
+}
+class "PrimitiveLoadedParameter" as conda.common.configuration.PrimitiveLoadedParameter #burlywood {
+  merge(matches)
+}
+class "PrimitiveParameter" as conda.common.configuration.PrimitiveParameter #burlywood {
+  load(name, match)
+}
+class "ProgressBar" as conda.common.io.ProgressBar #burlywood {
+  description
+  enabled : bool
+  json : bool
+  pbar
+  close()
+  finish()
+  update_to(fraction)
+}
+class "ProgressFileWrapper" as conda.gateways.disk.create.ProgressFileWrapper #darkgoldenrod {
+  progress_file
+  progress_file_size
+  progress_max_pos : int
+  progress_update_callback
+  progress_update()
+  read(size)
+}
+class "ProgressiveFetchExtract" as conda.core.package_cache_data.ProgressiveFetchExtract #chocolate {
+  cache_actions
+  extract_actions
+  link_precs
+  paired_actions
+  execute()
+  make_actions_for_record(pref_or_spec)
+  prepare()
+}
+class "<color:red>ProxyError</color>" as conda.exceptions.ProxyError #aliceblue {
+}
+class "PythonDistribution" as conda.common.pkg_formats.python.PythonDistribution #chartreuse {
+  ENTRY_POINTS_FILES : tuple
+  MANDATORY_FILES : tuple
+  MANIFEST_FILES : tuple
+  REQUIRES_FILES : tuple
+  anchor_full_path
+  conda_name
+  name
+  norm_name
+  python_version
+  version
+  get_conda_dependencies()
+  get_dist_requirements()
+  get_entry_points()
+  get_external_requirements()
+  get_extra_provides()
+  get_optional_dependencies()
+  get_paths()
+  get_python_requirements()
+  init(prefix_path, anchor_file, python_version)
+  manifest_full_path()
+}
+class "PythonDistributionMetadata" as conda.common.pkg_formats.python.PythonDistributionMetadata #chartreuse {
+  FILE_NAMES : tuple
+  MULTIPLE_USE_KEYS
+  SINGLE_USE_KEYS
+  name
+  version
+  get_classifiers()
+  get_dist_obsolete()
+  get_dist_provides()
+  get_dist_requirements()
+  get_external_requirements()
+  get_extra_provides()
+  get_python_requirements()
+}
+class "PythonEggInfoDistribution" as conda.common.pkg_formats.python.PythonEggInfoDistribution #chartreuse {
+  ENTRY_POINTS_FILES : tuple
+  MANDATORY_FILES : tuple
+  MANIFEST_FILES : tuple
+  REQUIRES_FILES : tuple
+  is_manageable
+  sp_reference
+}
+class "PythonEggLinkDistribution" as conda.common.pkg_formats.python.PythonEggLinkDistribution #chartreuse {
+  is_manageable : bool
+}
+class "PythonInstalledDistribution" as conda.common.pkg_formats.python.PythonInstalledDistribution #chartreuse {
+  ENTRY_POINTS_FILES : tuple
+  MANDATORY_FILES : tuple
+  MANIFEST_FILES : tuple
+  REQUIRES_FILES : tuple
+  is_manageable : bool
+  sp_reference
+}
+class "REPARSE_DATA_BUFFER" as conda.gateways.disk.link.REPARSE_DATA_BUFFER #darkgoldenrod {
+  get_print_name()
+  get_substitute_name()
+}
+class "RLock" as _thread.RLock #grey {
+  acquire()
+  release()
+}
+class "RawIOBase" as io.RawIOBase #grey {
+}
+class "RawParameter" as conda.common.configuration.RawParameter #burlywood {
+  key
+  source
+  keyflag()
+  make_raw_parameters(cls, source, from_map)
+  value(parameter_obj)
+  valueflags(parameter_obj)
+}
+class "RegisterEnvironmentLocationAction" as conda.core.path_actions.RegisterEnvironmentLocationAction #chocolate {
+  target_full_path
+  target_prefix
+  transaction_context
+  cleanup()
+  execute()
+  reverse()
+  verify()
+}
+class "<color:red>RemoveError</color>" as conda.exceptions.RemoveError #aliceblue {
+}
+class "RemoveFromPrefixPathAction" as conda.core.path_actions.RemoveFromPrefixPathAction #chocolate {
+  linked_package_data
+  verify()
+}
+class "RemoveLinkedPackageRecordAction" as conda.core.path_actions.RemoveLinkedPackageRecordAction #chocolate {
+  execute()
+  reverse()
+}
+class "RemoveMenuAction" as conda.core.path_actions.RemoveMenuAction #chocolate {
+  cleanup()
+  create_actions(cls, transaction_context, linked_package_data, target_prefix)
+  execute()
+  reverse()
+}
+class "RequestsCookieJar" as requests.cookies.RequestsCookieJar #gold {
+  copy()
+  get(name, default, domain, path)
+  get_dict(domain, path)
+  get_policy()
+  items()
+  iteritems()
+  iterkeys()
+  itervalues()
+  keys()
+  list_domains()
+  list_paths()
+  multiple_domains()
+  set(name, value)
+  set_cookie(cookie)
+  update(other)
+  values()
+}
+class "RequestsCookieJar" as pip._vendor.requests.cookies.RequestsCookieJar #hotpink {
+  copy()
+  get(name, default, domain, path)
+  get_dict(domain, path)
+  get_policy()
+  items()
+  iteritems()
+  iterkeys()
+  itervalues()
+  keys()
+  list_domains()
+  list_paths()
+  multiple_domains()
+  set(name, value)
+  set_cookie(cookie)
+  update(other)
+  values()
+}
+class "Resolve" as conda.resolve.Resolve #aliceblue {
+  channels : tuple
+  groups : dict
+  index
+  ms_depends_ : dict
+  trackers
+  bad_installed(installed, new_specs)
+  breadth_first_search_for_dep_graph(root_spec, target_name, dep_graph, num_targets)
+  build_conflict_map(specs, specs_to_add, history_specs)
+  build_graph_of_deps(spec)
+  default_filter(features, filter)
+  dependency_sort(must_have)
+  environment_is_consistent(installed)
+  find_conflicts(specs, specs_to_add, history_specs)
+  find_matches(spec)
+  find_matches_with_strict(ms, strict_channel_priority)
+  gen_clauses()
+  generate_feature_count(C)
+  generate_feature_metric(C)
+  generate_install_count(C, specs)
+  generate_package_count(C, missing)
+  generate_removal_count(C, specs)
+  generate_spec_constraints(C, specs)
+  generate_update_count(C, specs)
+  generate_version_metrics(C, specs, include0)
+  get_conflicting_specs(specs, explicit_specs)
+  get_pkgs(ms, emptyok)
+  get_reduced_index(explicit_specs, sort_by_exactness, exit_on_conflict)
+  install(specs, installed, update_deps, returnall)
+  install_specs(specs, installed, update_deps)
+  invalid_chains(spec, filter, optional)
+  match_any(mss, prec)
+  ms_depends(prec)
+  push_MatchSpec(C, spec)
+  remove(specs, installed)
+  remove_specs(specs, installed)
+  restore_bad(pkgs, preserve)
+  solve(specs, returnall, _remove, specs_to_add, history_specs, should_retry_solve)
+  to_feature_metric_id(prec_dist_str, feat)
+  to_sat_name(val)
+  valid(spec_or_prec, filter, optional)
+  valid2(spec_or_prec, filter_out, optional)
+  verify_specs(specs)
+  version_key(prec, vtype)
+}
+class "<color:red>ResolvePackageNotFound</color>" as conda.exceptions.ResolvePackageNotFound #aliceblue {
+  bad_deps : tuple
+}
+class "<color:red>Response304ContentUnchanged</color>" as conda.core.subdir_data.Response304ContentUnchanged #chocolate {
+}
+class "Result" as conda.core.initialize.Result #chocolate {
+  MODIFIED : str
+  NEEDS_SUDO : str
+  NO_CHANGE : str
+}
+class "S3Adapter" as conda.gateways.connection.adapters.s3.S3Adapter #cyan {
+  close()
+  send(request, stream, timeout, verify, cert, proxies)
+}
+class "SECURITY_ATTRIBUTES" as conda.gateways.disk.link.SECURITY_ATTRIBUTES #darkgoldenrod {
+}
+class "STRING" as conda.common.io.CaptureTarget.STRING #aliceblue {
+  name
+  value
+}
+class "SW" as conda.common._os.windows.SW #cadetblue {
+  name
+}
+class "SafetyChecks" as conda.base.constants.SafetyChecks #antiquewhite {
+  name
+}
+class "<color:red>SafetyError</color>" as conda.exceptions.SafetyError #aliceblue {
+}
+class "SatSolverChoice" as conda.base.constants.SatSolverChoice #antiquewhite {
+  name
+}
+class "Semaphore" as threading.Semaphore #grey {
+  acquire(blocking, timeout)
+  release()
+}
+class "SequenceLoadedParameter" as conda.common.configuration.SequenceLoadedParameter #burlywood {
+  collect_errors(instance, typed_value, source)
+  merge(matches)
+}
+class "SequenceParameter" as conda.common.configuration.SequenceParameter #burlywood {
+  string_delimiter : str
+  get_all_matches(name, names, instance)
+  load(name, match)
+}
+class "Session" as requests.sessions.Session #gold {
+  adapters
+  auth : NoneType
+  cert : NoneType
+  cookies : NoneType
+  headers
+  hooks
+  max_redirects : int
+  params : dict
+  proxies : dict
+  stream : bool
+  trust_env : bool
+  verify : bool
+  close()
+  delete(url)
+  get(url)
+  get_adapter(url)
+  head(url)
+  merge_environment_settings(url, proxies, stream, verify, cert)
+  mount(prefix, adapter)
+  options(url)
+  patch(url, data)
+  post(url, data, json)
+  prepare_request(request)
+  put(url, data)
+  request(method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)
+  send(request)
+}
+class "Session" as pip._vendor.requests.sessions.Session #hotpink {
+  adapters
+  auth : NoneType
+  cert : NoneType
+  cookies : NoneType
+  headers
+  hooks
+  max_redirects : int
+  params : dict
+  proxies : dict
+  stream : bool
+  trust_env : bool
+  verify : bool
+  close()
+  delete(url)
+  get(url)
+  get_adapter(url)
+  head(url)
+  merge_environment_settings(url, proxies, stream, verify, cert)
+  mount(prefix, adapter)
+  options(url)
+  patch(url, data)
+  post(url, data, json)
+  prepare_request(request)
+  put(url, data)
+  request(method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)
+  send(request)
+}
+class "SessionRedirectMixin" as requests.sessions.SessionRedirectMixin #gold {
+  get_redirect_target(resp)
+  rebuild_auth(prepared_request, response)
+  rebuild_method(prepared_request, response)
+  rebuild_proxies(prepared_request, proxies)
+  resolve_redirects(resp, req, stream, timeout, verify, cert, proxies, yield_requests)
+  should_strip_auth(old_url, new_url)
+}
+class "SessionRedirectMixin" as pip._vendor.requests.sessions.SessionRedirectMixin #hotpink {
+  get_redirect_target(resp)
+  rebuild_auth(prepared_request, response)
+  rebuild_method(prepared_request, response)
+  rebuild_proxies(prepared_request, proxies)
+  resolve_redirects(resp, req, stream, timeout, verify, cert, proxies, yield_requests)
+  should_strip_auth(old_url, new_url)
+}
+class "Set" as _collections_abc.Set #grey {
+  isdisjoint(other)
+}
+class "<color:red>SharedLinkPathClobberError</color>" as conda.exceptions.SharedLinkPathClobberError #aliceblue {
+}
+class "ShellExecuteInfo" as conda.common._os.windows.ShellExecuteInfo #cadetblue {
+  cbSize
+}
+class "SimpleQueue" as _queue.SimpleQueue #grey {
+  empty()
+  get()
+  get_nowait()
+  put()
+  put_nowait()
+  qsize()
+}
+class "SingleStrArgCachingType" as conda.models.version.SingleStrArgCachingType #darkseagreen {
+}
+class "Sized" as _collections_abc.Sized #grey {
+}
+class "SocketIO" as socket.SocketIO #grey {
+  mode
+  name
+  close()
+  fileno()
+  readable()
+  readinto(b)
+  seekable()
+  writable()
+  write(b)
+}
+class "Solver" as conda.core.solve.Solver #chocolate {
+  channels
+  neutered_specs : tuple
+  prefix
+  specs_to_add : set, frozenset, tuple
+  specs_to_add_names : frozenset
+  specs_to_remove : frozenset
+  ssc
+  subdirs : tuple
+  determine_constricting_specs(spec, solution_precs)
+  get_constrained_packages(pre_packages, post_packages, index_keys)
+  get_request_package_in_solution(solution_precs, specs_map)
+  solve_final_state(update_modifier, deps_modifier, prune, ignore_pinned, force_remove, should_retry_solve)
+  solve_for_diff(update_modifier, deps_modifier, prune, ignore_pinned, force_remove, force_reinstall, should_retry_solve)
+  solve_for_transaction(update_modifier, deps_modifier, prune, ignore_pinned, force_remove, force_reinstall, should_retry_solve)
+}
+class "SolverStateContainer" as conda.core.solve.SolverStateContainer #chocolate {
+  add_back_map : dict
+  deps_modifier
+  final_environment_specs : NoneType
+  force_remove
+  ignore_pinned
+  index : NoneType
+  prefix
+  prune
+  r : NoneType
+  should_retry_solve : bool
+  solution_precs : tuple
+  specs_map
+  update_modifier
+  pinned_specs()
+  prefix_data()
+  set_repository_metadata(index, r)
+  specs_from_history_map()
+  track_features_specs()
+  working_state_reset()
+}
+class "<color:red>SpecsConfigurationConflictError</color>" as conda.exceptions.SpecsConfigurationConflictError #aliceblue {
+}
+class "Spinner" as conda.common.io.Spinner #burlywood {
+  enabled : bool
+  fail_message : str
+  fh
+  json : bool
+  message
+  show_spin : bool
+  spinner_cycle
+  start()
+  stop()
+}
+class "SplitStrMatch" as conda.models.match_spec.SplitStrMatch #darkseagreen {
+  exact_value
+  match(other)
+}
+class "StdStreamHandler" as conda.gateways.logging.StdStreamHandler #coral {
+  sys_stream
+  terminator : str
+  terminator : str
+  emit(record)
+}
+class "StreamHandler" as logging.StreamHandler #grey {
+  name : str
+  stream : NoneType
+  terminator : str
+  emit(record)
+  flush()
+  setStream(stream)
+}
+class "StringField" as conda._vendor.auxlib.entity.StringField #forestgreen {
+  box(instance, instance_type, val)
+}
+class "StringIO" as _io.StringIO #grey {
+  old_write
+  release_conn
+  write
+  close()
+  detach()
+  fileno()
+  flush()
+  getvalue()
+  isatty()
+  read()
+  readable()
+  readline()
+  readlines()
+  seek()
+  seekable()
+  tell()
+  truncate()
+  writable()
+  write()
+  writelines()
+}
+class "Structure" as _ctypes.Structure #grey {
+}
+class "SubdirData" as conda.core.subdir_data.SubdirData #chocolate {
+  cache_path_base
+  cache_path_json
+  cache_path_pickle
+  channel
+  repodata_fn : str
+  url_w_credentials : NoneType
+  url_w_repodata_fn
+  url_w_subdir : NoneType
+  clear_cached_local_channel_data(cls)
+  iter_records()
+  load()
+  query(package_ref_or_match_spec)
+  query_all(package_ref_or_match_spec, channels, subdirs, repodata_fn)
+  reload()
+}
+class "SubdirDataType" as conda.core.subdir_data.SubdirDataType #chocolate {
+}
+class "SubdirField" as conda.models.records.SubdirField #darkseagreen {
+}
+class "SwallowBrokenPipe" as conda.common.io.SwallowBrokenPipe #burlywood {
+}
+class "TemporaryDirectory" as conda.gateways.disk.create.TemporaryDirectory #darkgoldenrod {
+  name
+  name : NoneType
+  cleanup(_warn, _warnings)
+}
+class "TextIOWrapper" as _io.TextIOWrapper #grey {
+  close()
+  detach()
+  fileno()
+  flush()
+  isatty()
+  read()
+  readable()
+  readline()
+  readlines()
+  reconfigure()
+  seek()
+  seekable()
+  tell()
+  truncate()
+  writable()
+  write()
+  writelines()
+}
+class "Thread" as threading.Thread #grey {
+  daemon
+  daemon : bool
+  ident
+  name
+  name
+  native_id
+  getName()
+  isAlive()
+  isDaemon()
+  is_alive()
+  join(timeout)
+  run()
+  setDaemon(daemonic)
+  setName(name)
+  start()
+}
+class "ThreadLimitedThreadPoolExecutor" as conda.common.io.ThreadLimitedThreadPoolExecutor #burlywood {
+  submit(fn)
+}
+class "ThreadPoolExecutor" as concurrent.futures.thread.ThreadPoolExecutor #grey {
+  shutdown(wait)
+  submit()
+}
+class "<color:red>TimeoutException</color>" as conda.common.io.timeout.TimeoutException #aliceblue {
+}
+class "TimestampField" as conda.models.records.TimestampField #darkseagreen {
+  box(instance, instance_type, val)
+  dump(instance, instance_type, val)
+}
+class "TmpDownload" as conda.gateways.connection.download.TmpDownload #cornflowerblue {
+  tmp_dir : NoneType
+  url
+  verbose : bool
+}
+class "TokenURLFilter" as conda.gateways.logging.TokenURLFilter #coral {
+  TOKEN_REPLACE
+  TOKEN_URL_PATTERN
+  filter(record)
+}
+class "<color:red>TooFewArgumentsError</color>" as conda.exceptions.TooFewArgumentsError #aliceblue {
+  expected
+  optional_message : str
+  received
+}
+class "<color:red>TooManyArgumentsError</color>" as conda.exceptions.TooManyArgumentsError #aliceblue {
+  expected
+  offending_arguments
+  optional_message : str
+  received
+}
+class "<color:red>UnavailableInvalidChannel</color>" as conda.exceptions.UnavailableInvalidChannel #aliceblue {
+}
+class "<color:red>UnknownPackageClobberError</color>" as conda.exceptions.UnknownPackageClobberError #aliceblue {
+}
+class "UnlinkLinkTransaction" as conda.core.link.UnlinkLinkTransaction #chocolate {
+  execute_executor
+  nothing_to_do
+  prefix_action_groups
+  prefix_setups
+  transaction_context : dict
+  verify_executor
+  download_and_extract()
+  execute()
+  prepare()
+  print_transaction_summary()
+  verify()
+}
+class "UnlinkPathAction" as conda.core.path_actions.UnlinkPathAction #chocolate {
+  holding_full_path
+  holding_short_path
+  link_type
+  cleanup()
+  execute()
+  reverse()
+}
+class "UnregisterEnvironmentLocationAction" as conda.core.path_actions.UnregisterEnvironmentLocationAction #chocolate {
+  target_full_path
+  target_prefix
+  transaction_context
+  cleanup()
+  execute()
+  reverse()
+  verify()
+}
+class "<color:red>UnsatisfiableError</color>" as conda.exceptions.UnsatisfiableError #aliceblue {
+}
+class "UpdateHistoryAction" as conda.core.path_actions.UpdateHistoryAction #chocolate {
+  hold_path
+  neutered_specs
+  remove_specs
+  update_specs
+  cleanup()
+  create_actions(cls, transaction_context, target_prefix, remove_specs, update_specs, neutered_specs)
+  execute()
+  reverse()
+}
+class "UpdateModifier" as conda.base.constants.UpdateModifier #antiquewhite {
+  name
+}
+class "UrlsData" as conda.core.package_cache_data.UrlsData #chocolate {
+  pkgs_dir
+  urls_txt_path
+  add_url(url)
+  get_url(package_path)
+}
+class "<color:red>ValidationError</color>" as conda.common.configuration.ValidationError #burlywood {
+  parameter_name
+  parameter_value
+  source
+}
+class "VersionOrder" as conda.models.version.VersionOrder #darkseagreen {
+  fillvalue : int
+  local : list
+  norm_version
+  version
+  startswith(other)
+}
+class "VersionSpec" as conda.models.version.VersionSpec #darkseagreen {
+  matcher_vo
+  operator_func
+  regex
+  tup : tuple
+  get_matcher(vspec)
+  merge(other)
+  union(other)
+}
+class "WIN32_FIND_DATA" as conda.gateways.disk.link.WIN32_FIND_DATA #darkgoldenrod {
+  file_size
+}
+class "WeakSet" as _weakrefset.WeakSet #grey {
+  data : set
+  add(item)
+  clear()
+  copy()
+  difference(other)
+  difference_update(other)
+  discard(item)
+  intersection(other)
+  intersection_update(other)
+  isdisjoint(other)
+  issubset(other)
+  issuperset(other)
+  pop()
+  remove(item)
+  symmetric_difference(other)
+  symmetric_difference_update(other)
+  union(other)
+  update(other)
+}
+class "WindowsError" as conda.gateways.disk.link.WindowsError #darkgoldenrod {
+  code
+  message
+}
+class "XonshActivator" as conda.activate.XonshActivator #aliceblue {
+  command_join : str
+  export_var_tmpl : str
+  hook_source_path
+  pathsep_join
+  run_script_tmpl : str
+  script_extension : str
+  sep : str
+  set_var_tmpl : str
+  tempfile_extension : NoneType
+  unset_var_tmpl : str
+  path_conversion(paths)
+}
+class "YamlRawParameter" as conda.common.configuration.YamlRawParameter #burlywood {
+  keyflag()
+  make_raw_parameters(cls, source, from_map)
+  make_raw_parameters_from_file(cls, filepath)
+  value(parameter_obj)
+  valueflags(parameter_obj)
+}
+class "_ActionsContainer" as argparse._ActionsContainer #grey {
+  argument_default
+  conflict_handler
+  description
+  prefix_chars
+  add_argument()
+  add_argument_group()
+  add_mutually_exclusive_group()
+  get_default(dest)
+  register(registry_name, value, object)
+  set_defaults()
+}
+class "_Activator" as conda.activate._Activator #aliceblue {
+  command
+  command_join : NoneType
+  env_name_or_prefix
+  environ : dict
+  export_var_tmpl : NoneType
+  hook_source_path : NoneType
+  path_conversion : NoneType
+  pathsep_join : NoneType
+  run_script_tmpl : NoneType
+  script_extension : NoneType
+  sep : NoneType
+  set_var_tmpl : NoneType
+  stack : bool
+  tempfile_extension : NoneType
+  unset_var_tmpl : NoneType
+  activate()
+  add_export_unset_vars(export_vars, unset_vars)
+  build_activate(env_name_or_prefix)
+  build_deactivate()
+  build_reactivate()
+  build_stack(env_name_or_prefix)
+  commands()
+  deactivate()
+  execute()
+  get_export_unset_vars(odargs)
+  get_scripts_export_unset_vars()
+  hook(auto_activate_base)
+  reactivate()
+}
+class "_ArgumentGroup" as argparse._ArgumentGroup #grey {
+  title : NoneType
+}
+class "_AttributeHolder" as argparse._AttributeHolder #grey {
+}
+class "_BufferedIOBase" as _io._BufferedIOBase #grey {
+  close()
+  detach()
+  fileno()
+  flush()
+  isatty()
+  read()
+  read1()
+  readable()
+  readinto()
+  readinto1()
+  readline()
+  readlines()
+  seek()
+  seekable()
+  tell()
+  truncate()
+  writable()
+  write()
+  writelines()
+}
+class "_ClauseArray" as conda.common._logic._ClauseArray #burlywood {
+  append(clause)
+  as_array()
+  as_list()
+  extend(clauses)
+  get_clause_count()
+  restore_state(saved_state)
+  save_state()
+}
+class "_ClauseList" as conda.common._logic._ClauseList #burlywood {
+  append
+  extend
+  as_array()
+  as_list()
+  get_clause_count()
+  restore_state(saved_state)
+  save_state()
+}
+class "_CountAction" as argparse._CountAction #grey {
+}
+class "_FeaturesField" as conda.models.records._FeaturesField #darkseagreen {
+  box(instance, instance_type, val)
+  dump(instance, instance_type, val)
+}
+class "_IOBase" as _io._IOBase #grey {
+  close()
+  fileno()
+  flush()
+  isatty()
+  readable()
+  readline()
+  readlines()
+  seek()
+  seekable()
+  tell()
+  truncate()
+  writable()
+  writelines()
+}
+class "_Null" as conda._vendor.auxlib._Null #burlywood {
+  to_json
+}
+class "<color:red>_PaddingError</color>" as conda.core.portability._PaddingError #chocolate {
+}
+class "_PyCryptoSatSolver" as conda.common._logic._PyCryptoSatSolver #burlywood {
+  invoke(solver)
+  process_solution(solution)
+  setup(m, threads)
+}
+class "_PySatSolver" as conda.common._logic._PySatSolver #burlywood {
+  invoke(solver)
+  process_solution(sat_solution)
+  setup(m)
+}
+class "_PySimpleQueue" as queue._PySimpleQueue #grey {
+  empty()
+  get(block, timeout)
+  get_nowait()
+  put(item, block, timeout)
+  put_nowait(item)
+  qsize()
+}
+class "_PycoSatSolver" as conda.common._logic._PycoSatSolver #burlywood {
+  invoke(iter_sol)
+  process_solution(sat_solution)
+  setup(m, limit)
+}
+class "_RLock" as threading._RLock #grey {
+  acquire(blocking, timeout)
+  release()
+}
+class "_RawIOBase" as _io._RawIOBase #grey {
+  close()
+  fileno()
+  flush()
+  isatty()
+  read()
+  readable()
+  readall()
+  readinto()
+  readline()
+  readlines()
+  seek()
+  seekable()
+  tell()
+  truncate()
+  writable()
+  write()
+  writelines()
+}
+class "_SatSolver" as conda.common._logic._SatSolver #burlywood {
+  add_clause
+  add_clauses
+  as_list()
+  get_clause_count()
+  invoke(solver)
+  process_solution(sat_solution)
+  restore_state(saved_state)
+  run(m)
+  save_state()
+  setup(m)
+}
+class "_Section" as argparse.HelpFormatter._Section #grey {
+  formatter
+  heading : NoneType
+  items : list
+  parent
+  format_help()
+}
+class "_StrMatchMixin" as conda.models.match_spec._StrMatchMixin #darkseagreen {
+  exact_value
+}
+class "_TextIOBase" as _io._TextIOBase #grey {
+  close()
+  detach()
+  fileno()
+  flush()
+  isatty()
+  read()
+  readable()
+  readline()
+  readlines()
+  seek()
+  seekable()
+  tell()
+  truncate()
+  writable()
+  write()
+  writelines()
+}
+class "array" as array.array #grey {
+  append()
+  buffer_info()
+  byteswap()
+  count()
+  extend()
+  frombytes()
+  fromfile()
+  fromlist()
+  fromstring()
+  fromunicode()
+  index()
+  insert()
+  pop()
+  remove()
+  reverse()
+  tobytes()
+  tofile()
+  tolist()
+  tostring()
+  tounicode()
+}
+class "cycle" as itertools.cycle #grey {
+}
+class "defaultdict" as collections.defaultdict #grey {
+  default_factory : NoneType
+}
+class "deque" as collections.deque #grey {
+  iterable : list
+  maxlen : int
+  append(x)
+  appendleft(x)
+  clear()
+  copy()
+  count(x)
+  extend(iterable)
+  extendleft(iterable)
+  index(x, start, end)
+  insert(x, i)
+  pop()
+  popleft()
+  remove(value)
+  reverse()
+  rotate(n)
+}
+class "family" as _socket.socket.family #grey {
+}
+class "frozendict" as conda._vendor.auxlib.collection.frozendict #forestgreen {
+}
+class "frozendict" as conda._vendor.frozendict.frozendict #burlywood {
+  dict_cls : dict
+  copy()
+  to_json()
+}
+class "hardlink" as conda.models.enums.LinkType.hardlink #cadetblue {
+  name
+  value
+}
+class "lock" as threading.lock #grey {
+  acquire(blocking, timeout)
+  locked()
+  release()
+}
+class "package_cache" as conda.install.package_cache.package_cache #chartreuse {
+  keys()
+}
+class "partial" as _functools.functools.partial #grey {
+  args : tuple
+  func
+  keywords : dict
+}
+class "partial" as functools.partial #grey {
+  args : tuple
+  func
+  keywords : dict
+}
+class "socket" as socket.socket #grey {
+  family
+  type
+  accept()
+  close()
+  detach()
+  dup()
+  get_inheritable()
+  makefile(mode, buffering)
+  sendfile(file, offset, count)
+  set_inheritable(inheritable)
+}
+class "socket" as _socket.socket #grey {
+  bind()
+  close()
+  connect()
+  connect_ex()
+  detach()
+  fileno()
+  getblocking()
+  getpeername()
+  getsockname()
+  getsockopt()
+  gettimeout()
+  listen()
+  recv()
+  recv_into()
+  recvfrom()
+  recvfrom_into()
+  recvmsg()
+  recvmsg_into()
+  send()
+  sendall()
+  sendmsg()
+  sendto()
+  setblocking()
+  setsockopt()
+  settimeout()
+  shutdown()
+}
+class "time_recorder" as conda.common.io.time_recorder #burlywood {
+  entry_name : NoneType, str
+  module_name : NoneType
+  record_file : bytes, str
+  start_time
+  start_time : NoneType
+  total_call_num
+  total_run_time
+  log_totals(cls)
+}
+class "tqdm" as conda._vendor.tqdm.std.tqdm #antiquewhite {
+  ascii : bool, NoneType
+  bar_format : str, NoneType
+  colour : NoneType
+  delay : int
+  desc : str
+  disable : bool
+  dynamic_miniters : bool
+  dynamic_ncols : bool, NoneType
+  format_dict
+  fp
+  gui : bool
+  initial : int
+  iterable : NoneType
+  last_print_n : int
+  last_print_t
+  leave : bool
+  lock_args : NoneType
+  maxinterval : float, int
+  mininterval : int, float
+  miniters : int, NoneType
+  monitor : NoneType
+  monitor_interval : int
+  n : int
+  ncols : NoneType
+  nrows : NoneType
+  pos
+  postfix : str, NoneType
+  smoothing : int, float
+  sp
+  start_t
+  total : NoneType
+  unit : str
+  unit_divisor : int
+  unit_scale : bool
+  clear(nolock)
+  close()
+  display(msg, pos)
+  external_write_mode(cls, file, nolock)
+  format_interval(t)
+  format_meter(n, total, elapsed, ncols, prefix, ascii, unit, unit_scale, rate, bar_format, postfix, unit_divisor, initial, colour)
+  format_num(n)
+  format_sizeof(num, suffix, divisor)
+  get_lock(cls)
+  moveto(n)
+  pandas(cls)
+  refresh(nolock, lock_args)
+  reset(total)
+  set_description(desc, refresh)
+  set_description_str(desc, refresh)
+  set_lock(cls, lock)
+  set_postfix(ordered_dict, refresh)
+  set_postfix_str(s, refresh)
+  status_printer(file)
+  unpause()
+  update(n)
+  wrapattr(cls, stream, method, total, bytes)
+  write(cls, s, file, end, nolock)
+}
+_collections_abc.Collection --|> _collections_abc.Container
+_collections_abc.Collection --|> _collections_abc.Iterable
+_collections_abc.Collection --|> _collections_abc.Sized
+_collections_abc.Mapping --|> _collections_abc.Collection
+_collections_abc.MutableMapping --|> _collections_abc.Mapping
+_collections_abc.MutableSet --|> _collections_abc.Set
+_collections_abc.Set --|> _collections_abc.Collection
+_io.BufferedRWPair --|> _io._BufferedIOBase
+_io.BufferedReader --|> _io._BufferedIOBase
+_io.BufferedWriter --|> _io._BufferedIOBase
+_io.StringIO --|> _io._TextIOBase
+_io.TextIOWrapper --|> _io._TextIOBase
+_io._BufferedIOBase --|> _io._IOBase
+_io._RawIOBase --|> _io._IOBase
+_io._TextIOBase --|> _io._IOBase
+argparse.Action --|> argparse._AttributeHolder
+argparse.ArgumentParser --|> argparse._ActionsContainer
+argparse.ArgumentParser --|> argparse._AttributeHolder
+argparse._ArgumentGroup --|> argparse._ActionsContainer
+argparse._CountAction --|> argparse.Action
+concurrent.futures.thread.ThreadPoolExecutor --|> concurrent.futures._base.Executor
+conda.CondaExitZero --|> conda.CondaError
+conda.CondaMultiError --|> conda.CondaError
+conda._vendor.auxlib.collection.frozendict --|> collections.OrderedDict
+conda._vendor.auxlib.entity.BooleanField --|> conda._vendor.auxlib.entity.Field
+conda._vendor.auxlib.entity.ComposableField --|> conda._vendor.auxlib.entity.Field
+conda._vendor.auxlib.entity.EnumField --|> conda._vendor.auxlib.entity.Field
+conda._vendor.auxlib.entity.ImmutableEntity --|> conda._vendor.auxlib.entity.Entity
+conda._vendor.auxlib.entity.IntegerField --|> conda._vendor.auxlib.entity.Field
+conda._vendor.auxlib.entity.ListField --|> conda._vendor.auxlib.entity.Field
+conda._vendor.auxlib.entity.NumberField --|> conda._vendor.auxlib.entity.Field
+conda._vendor.auxlib.entity.StringField --|> conda._vendor.auxlib.entity.Field
+conda._vendor.boltons.setutils.IndexedSet --|> _collections_abc.MutableSet
+conda._vendor.frozendict.frozendict --|> _collections_abc.Mapping
+conda._vendor.tqdm.std.tqdm --|> conda._vendor.tqdm.utils.Comparable
+conda._vendor.tqdm.utils.DisableOnWriteError --|> conda._vendor.tqdm.utils.ObjectWrapper
+conda.activate.CmdExeActivator --|> conda.activate._Activator
+conda.activate.CshActivator --|> conda.activate._Activator
+conda.activate.FishActivator --|> conda.activate._Activator
+conda.activate.JSONFormatMixin --|> conda.activate._Activator
+conda.activate.PosixActivator --|> conda.activate._Activator
+conda.activate.PowerShellActivator --|> conda.activate._Activator
+conda.activate.XonshActivator --|> conda.activate._Activator
+conda.base.constants.ChannelPriorityMeta --|> enum.EnumMeta
+conda.base.constants.DepsModifier --|> enum.Enum
+conda.base.constants.PathConflict --|> enum.Enum
+conda.base.constants.SafetyChecks --|> enum.Enum
+conda.base.constants.SatSolverChoice --|> enum.Enum
+conda.base.constants.UpdateModifier --|> enum.Enum
+conda.base.context.Context --|> conda.common.configuration.Configuration
+conda.cli.conda_argparse.ArgumentParser --|> argparse.ArgumentParser
+conda.cli.conda_argparse.NullCountAction --|> argparse._CountAction
+conda.common._logic._PyCryptoSatSolver --|> conda.common._logic._SatSolver
+conda.common._logic._PySatSolver --|> conda.common._logic._SatSolver
+conda.common._logic._PycoSatSolver --|> conda.common._logic._SatSolver
+conda.common._os.windows.ERROR --|> enum.IntEnum
+conda.common._os.windows.SW --|> enum.IntEnum
+conda.common._os.windows.ShellExecuteInfo --|> _ctypes.Structure
+conda.common.configuration.ArgParseRawParameter --|> conda.common.configuration.RawParameter
+conda.common.configuration.ConfigurationError --|> conda.CondaError
+conda.common.configuration.ConfigurationLoadError --|> conda.common.configuration.ConfigurationError
+conda.common.configuration.CustomValidationError --|> conda.common.configuration.ValidationError
+conda.common.configuration.DefaultValueRawParameter --|> conda.common.configuration.RawParameter
+conda.common.configuration.EnvRawParameter --|> conda.common.configuration.RawParameter
+conda.common.configuration.InvalidElementTypeError --|> conda.common.configuration.InvalidTypeError
+conda.common.configuration.InvalidTypeError --|> conda.common.configuration.ValidationError
+conda.common.configuration.MapLoadedParameter --|> conda.common.configuration.LoadedParameter
+conda.common.configuration.MapParameter --|> conda.common.configuration.Parameter
+conda.common.configuration.MultiValidationError --|> conda.CondaMultiError
+conda.common.configuration.MultiValidationError --|> conda.common.configuration.ConfigurationError
+conda.common.configuration.MultipleKeysError --|> conda.common.configuration.ValidationError
+conda.common.configuration.ObjectLoadedParameter --|> conda.common.configuration.LoadedParameter
+conda.common.configuration.ObjectParameter --|> conda.common.configuration.Parameter
+conda.common.configuration.ParameterFlag --|> enum.Enum
+conda.common.configuration.PrimitiveLoadedParameter --|> conda.common.configuration.LoadedParameter
+conda.common.configuration.PrimitiveParameter --|> conda.common.configuration.Parameter
+conda.common.configuration.SequenceLoadedParameter --|> conda.common.configuration.LoadedParameter
+conda.common.configuration.SequenceParameter --|> conda.common.configuration.Parameter
+conda.common.configuration.ValidationError --|> conda.common.configuration.ConfigurationError
+conda.common.configuration.YamlRawParameter --|> conda.common.configuration.RawParameter
+conda.common.io.CaptureTarget --|> enum.Enum
+conda.common.io.CaptureTarget.STRING --|> enum.Enum
+conda.common.io.DeltaSecondsFormatter --|> logging.Formatter
+conda.common.io.DummyExecutor --|> concurrent.futures._base.Executor
+conda.common.io.SwallowBrokenPipe --|> conda.common.io.ContextDecorator
+conda.common.io.ThreadLimitedThreadPoolExecutor --|> concurrent.futures.thread.ThreadPoolExecutor
+conda.common.io.time_recorder --|> conda.common.io.ContextDecorator
+conda.common.pkg_formats.python.PythonEggInfoDistribution --|> conda.common.pkg_formats.python.PythonDistribution
+conda.common.pkg_formats.python.PythonEggLinkDistribution --|> conda.common.pkg_formats.python.PythonEggInfoDistribution
+conda.common.pkg_formats.python.PythonInstalledDistribution --|> conda.common.pkg_formats.python.PythonDistribution
+conda.core.path_actions.AggregateCompileMultiPycAction --|> conda.core.path_actions.CompileMultiPycAction
+conda.core.path_actions.CacheUrlAction --|> conda.core.path_actions.PathAction
+conda.core.path_actions.CompileMultiPycAction --|> conda.core.path_actions.MultiPathAction
+conda.core.path_actions.CreateInPrefixPathAction --|> conda.core.path_actions.PrefixPathAction
+conda.core.path_actions.CreateNonadminAction --|> conda.core.path_actions.CreateInPrefixPathAction
+conda.core.path_actions.CreatePrefixRecordAction --|> conda.core.path_actions.CreateInPrefixPathAction
+conda.core.path_actions.CreatePythonEntryPointAction --|> conda.core.path_actions.CreateInPrefixPathAction
+conda.core.path_actions.ExtractPackageAction --|> conda.core.path_actions.PathAction
+conda.core.path_actions.LinkPathAction --|> conda.core.path_actions.CreateInPrefixPathAction
+conda.core.path_actions.MakeMenuAction --|> conda.core.path_actions.CreateInPrefixPathAction
+conda.core.path_actions.PrefixPathAction --|> conda.core.path_actions.PathAction
+conda.core.path_actions.PrefixReplaceLinkAction --|> conda.core.path_actions.LinkPathAction
+conda.core.path_actions.RegisterEnvironmentLocationAction --|> conda.core.path_actions.PathAction
+conda.core.path_actions.RemoveFromPrefixPathAction --|> conda.core.path_actions.PrefixPathAction
+conda.core.path_actions.RemoveLinkedPackageRecordAction --|> conda.core.path_actions.UnlinkPathAction
+conda.core.path_actions.RemoveMenuAction --|> conda.core.path_actions.RemoveFromPrefixPathAction
+conda.core.path_actions.UnlinkPathAction --|> conda.core.path_actions.RemoveFromPrefixPathAction
+conda.core.path_actions.UnregisterEnvironmentLocationAction --|> conda.core.path_actions.PathAction
+conda.core.path_actions.UpdateHistoryAction --|> conda.core.path_actions.CreateInPrefixPathAction
+conda.exceptions.ActivateHelp --|> conda.exceptions.Help
+conda.exceptions.ArgumentError --|> conda.CondaError
+conda.exceptions.AuthenticationError --|> conda.CondaError
+conda.exceptions.BasicClobberError --|> conda.exceptions.ClobberError
+conda.exceptions.BinaryPrefixReplacementError --|> conda.CondaError
+conda.exceptions.CaseInsensitiveFileSystemError --|> conda.CondaError
+conda.exceptions.ChannelError --|> conda.CondaError
+conda.exceptions.ChannelNotAllowed --|> conda.exceptions.ChannelError
+conda.exceptions.ChecksumMismatchError --|> conda.CondaError
+conda.exceptions.ClobberError --|> conda.CondaError
+conda.exceptions.CommandArgumentError --|> conda.exceptions.ArgumentError
+conda.exceptions.CommandNotFoundError --|> conda.CondaError
+conda.exceptions.CondaDependencyError --|> conda.CondaError
+conda.exceptions.CondaEnvironmentError --|> conda.CondaError
+conda.exceptions.CondaFileIOError --|> conda.exceptions.CondaIOError
+conda.exceptions.CondaHTTPError --|> conda.CondaError
+conda.exceptions.CondaHistoryError --|> conda.CondaError
+conda.exceptions.CondaIOError --|> conda.CondaError
+conda.exceptions.CondaImportError --|> conda.CondaError
+conda.exceptions.CondaIndexError --|> conda.CondaError
+conda.exceptions.CondaKeyError --|> conda.CondaError
+conda.exceptions.CondaMemoryError --|> conda.CondaError
+conda.exceptions.CondaOSError --|> conda.CondaError
+conda.exceptions.CondaRevisionError --|> conda.CondaError
+conda.exceptions.CondaSignalInterrupt --|> conda.CondaError
+conda.exceptions.CondaSystemExit --|> conda.CondaExitZero
+conda.exceptions.CondaTypeError --|> conda.CondaError
+conda.exceptions.CondaUpgradeError --|> conda.CondaError
+conda.exceptions.CondaValueError --|> conda.CondaError
+conda.exceptions.CondaVerificationError --|> conda.CondaError
+conda.exceptions.CorruptedEnvironmentError --|> conda.CondaError
+conda.exceptions.CouldntParseError --|> conda.exceptions.ParseError
+conda.exceptions.CyclicalDependencyError --|> conda.CondaError
+conda.exceptions.DeactivateHelp --|> conda.exceptions.Help
+conda.exceptions.DirectoryNotACondaEnvironmentError --|> conda.CondaError
+conda.exceptions.DirectoryNotFoundError --|> conda.CondaError
+conda.exceptions.DisallowedPackageError --|> conda.CondaError
+conda.exceptions.DryRunExit --|> conda.CondaExitZero
+conda.exceptions.EncodingError --|> conda.CondaError
+conda.exceptions.EnvironmentLocationNotFound --|> conda.CondaError
+conda.exceptions.EnvironmentNameNotFound --|> conda.CondaError
+conda.exceptions.EnvironmentNotWritableError --|> conda.CondaError
+conda.exceptions.GenericHelp --|> conda.exceptions.Help
+conda.exceptions.Help --|> conda.CondaError
+conda.exceptions.InstallError --|> conda.CondaError
+conda.exceptions.InvalidMatchSpec --|> conda.exceptions.InvalidSpec
+conda.exceptions.InvalidSpec --|> conda.CondaError
+conda.exceptions.InvalidVersionSpec --|> conda.exceptions.InvalidSpec
+conda.exceptions.KnownPackageClobberError --|> conda.exceptions.ClobberError
+conda.exceptions.LinkError --|> conda.CondaError
+conda.exceptions.LockError --|> conda.CondaError
+conda.exceptions.NoBaseEnvironmentError --|> conda.CondaError
+conda.exceptions.NoSpaceLeftError --|> conda.CondaError
+conda.exceptions.NoWritableEnvsDirError --|> conda.CondaError
+conda.exceptions.NoWritablePkgsDirError --|> conda.CondaError
+conda.exceptions.NotWritableError --|> conda.CondaError
+conda.exceptions.OperationNotAllowed --|> conda.CondaError
+conda.exceptions.PackageNotInstalledError --|> conda.CondaError
+conda.exceptions.PackagesNotFoundError --|> conda.CondaError
+conda.exceptions.PaddingError --|> conda.CondaError
+conda.exceptions.ParseError --|> conda.CondaError
+conda.exceptions.PathNotFoundError --|> conda.CondaError
+conda.exceptions.ProxyError --|> conda.CondaError
+conda.exceptions.RemoveError --|> conda.CondaError
+conda.exceptions.ResolvePackageNotFound --|> conda.CondaError
+conda.exceptions.SafetyError --|> conda.CondaError
+conda.exceptions.SharedLinkPathClobberError --|> conda.exceptions.ClobberError
+conda.exceptions.SpecsConfigurationConflictError --|> conda.CondaError
+conda.exceptions.TooFewArgumentsError --|> conda.exceptions.ArgumentError
+conda.exceptions.TooManyArgumentsError --|> conda.exceptions.ArgumentError
+conda.exceptions.UnavailableInvalidChannel --|> conda.exceptions.ChannelError
+conda.exceptions.UnknownPackageClobberError --|> conda.exceptions.ClobberError
+conda.exceptions.UnsatisfiableError --|> conda.CondaError
+conda.gateways.connection.adapters.ftp.FTPAdapter --|> pip._vendor.requests.adapters.BaseAdapter
+conda.gateways.connection.adapters.ftp.FTPAdapter --|> requests.adapters.BaseAdapter
+conda.gateways.connection.adapters.localfs.LocalFSAdapter --|> pip._vendor.requests.adapters.BaseAdapter
+conda.gateways.connection.adapters.localfs.LocalFSAdapter --|> requests.adapters.BaseAdapter
+conda.gateways.connection.adapters.s3.S3Adapter --|> pip._vendor.requests.adapters.BaseAdapter
+conda.gateways.connection.adapters.s3.S3Adapter --|> requests.adapters.BaseAdapter
+conda.gateways.connection.session.CondaHttpAuth --|> pip._vendor.requests.auth.AuthBase
+conda.gateways.connection.session.CondaHttpAuth --|> requests.auth.AuthBase
+conda.gateways.connection.session.CondaSession --|> pip._vendor.requests.sessions.Session
+conda.gateways.connection.session.CondaSession --|> requests.sessions.Session
+conda.gateways.connection.session.EnforceUnusedAdapter --|> pip._vendor.requests.adapters.BaseAdapter
+conda.gateways.connection.session.EnforceUnusedAdapter --|> requests.adapters.BaseAdapter
+conda.gateways.disk.link.CrossPlatformStLink._initialize.BY_HANDLE_FILE_INFORMATION --|> _ctypes.Structure
+conda.gateways.disk.link.CrossPlatformStLink._initialize.FILETIME --|> _ctypes.Structure
+conda.gateways.disk.link.REPARSE_DATA_BUFFER --|> _ctypes.Structure
+conda.gateways.disk.link.SECURITY_ATTRIBUTES --|> _ctypes.Structure
+conda.gateways.disk.link.WIN32_FIND_DATA --|> _ctypes.Structure
+conda.gateways.logging.StdStreamHandler --|> logging.StreamHandler
+conda.gateways.logging.TokenURLFilter --|> logging.Filter
+conda.lock.DirectoryLock --|> conda.lock.FileLock
+conda.models.channel.MultiChannel --|> conda.models.channel.Channel
+conda.models.dist.Dist --|> conda._vendor.auxlib.entity.Entity
+conda.models.dist.DistType --|> conda._vendor.auxlib.entity.EntityType
+conda.models.enums.Arch --|> enum.Enum
+conda.models.enums.FileMode --|> enum.Enum
+conda.models.enums.LeasedPathType --|> enum.Enum
+conda.models.enums.LinkType --|> enum.Enum
+conda.models.enums.LinkType.hardlink --|> enum.Enum
+conda.models.enums.MetadataSignatureStatus --|> enum.Enum
+conda.models.enums.NoarchType --|> enum.Enum
+conda.models.enums.PackageType --|> enum.Enum
+conda.models.enums.PathType --|> enum.Enum
+conda.models.enums.Platform --|> enum.Enum
+conda.models.leased_path_entry.LeasedPathEntry --|> conda._vendor.auxlib.entity.Entity
+conda.models.match_spec.CaseInsensitiveStrMatch --|> conda.models.match_spec.GlobLowerStrMatch
+conda.models.match_spec.ChannelMatch --|> conda.models.match_spec.GlobStrMatch
+conda.models.match_spec.ExactLowerStrMatch --|> conda.models.match_spec.ExactStrMatch
+conda.models.match_spec.ExactStrMatch --|> conda.models.match_spec.MatchInterface
+conda.models.match_spec.ExactStrMatch --|> conda.models.match_spec._StrMatchMixin
+conda.models.match_spec.FeatureMatch --|> conda.models.match_spec.MatchInterface
+conda.models.match_spec.GlobLowerStrMatch --|> conda.models.match_spec.GlobStrMatch
+conda.models.match_spec.GlobStrMatch --|> conda.models.match_spec.MatchInterface
+conda.models.match_spec.GlobStrMatch --|> conda.models.match_spec._StrMatchMixin
+conda.models.match_spec.SplitStrMatch --|> conda.models.match_spec.MatchInterface
+conda.models.package_info.Noarch --|> conda._vendor.auxlib.entity.Entity
+conda.models.package_info.NoarchField --|> conda._vendor.auxlib.entity.EnumField
+conda.models.package_info.PackageInfo --|> conda._vendor.auxlib.entity.ImmutableEntity
+conda.models.package_info.PackageMetadata --|> conda._vendor.auxlib.entity.Entity
+conda.models.package_info.PreferredEnv --|> conda._vendor.auxlib.entity.Entity
+conda.models.prefix_graph.GeneralGraph --|> conda.models.prefix_graph.PrefixGraph
+conda.models.records.ChannelField --|> conda._vendor.auxlib.entity.ComposableField
+conda.models.records.FilenameField --|> conda._vendor.auxlib.entity.StringField
+conda.models.records.Link --|> conda._vendor.auxlib.entity.DictSafeMixin
+conda.models.records.Link --|> conda._vendor.auxlib.entity.Entity
+conda.models.records.LinkTypeField --|> conda._vendor.auxlib.entity.EnumField
+conda.models.records.Md5Field --|> conda._vendor.auxlib.entity.StringField
+conda.models.records.NoarchField --|> conda._vendor.auxlib.entity.EnumField
+conda.models.records.PackageCacheRecord --|> conda.models.records.PackageRecord
+conda.models.records.PackageRecord --|> conda._vendor.auxlib.entity.DictSafeMixin
+conda.models.records.PackageRecord --|> conda._vendor.auxlib.entity.Entity
+conda.models.records.PackageTypeField --|> conda._vendor.auxlib.entity.EnumField
+conda.models.records.PathData --|> conda._vendor.auxlib.entity.Entity
+conda.models.records.PathDataV1 --|> conda.models.records.PathData
+conda.models.records.PathsData --|> conda._vendor.auxlib.entity.Entity
+conda.models.records.PrefixRecord --|> conda.models.records.PackageRecord
+conda.models.records.SubdirField --|> conda._vendor.auxlib.entity.StringField
+conda.models.records.TimestampField --|> conda._vendor.auxlib.entity.NumberField
+conda.models.records._FeaturesField --|> conda._vendor.auxlib.entity.ListField
+conda.models.version.BuildNumberMatch --|> conda.models.version.BaseSpec
+conda.models.version.VersionSpec --|> conda.models.version.BaseSpec
+enum.IntEnum --|> enum.Enum
+http.cookiejar.DefaultCookiePolicy --|> http.cookiejar.CookiePolicy
+io.IOBase --|> _io._IOBase
+io.RawIOBase --|> _io._RawIOBase
+io.RawIOBase --|> io.IOBase
+logging.Handler --|> logging.Filterer
+logging.StreamHandler --|> logging.Handler
+pip._vendor.requests.cookies.RequestsCookieJar --|> _collections_abc.MutableMapping
+pip._vendor.requests.cookies.RequestsCookieJar --|> http.cookiejar.CookieJar
+pip._vendor.requests.sessions.Session --|> pip._vendor.requests.sessions.SessionRedirectMixin
+pip._vendor.requests.structures.CaseInsensitiveDict --|> _collections_abc.MutableMapping
+requests.cookies.RequestsCookieJar --|> _collections_abc.MutableMapping
+requests.cookies.RequestsCookieJar --|> http.cookiejar.CookieJar
+requests.sessions.Session --|> requests.sessions.SessionRedirectMixin
+requests.structures.CaseInsensitiveDict --|> _collections_abc.MutableMapping
+socket.SocketIO --|> io.RawIOBase
+socket.socket --|> _socket.socket
+_functools.functools.partial --* conda.gateways.logging.TokenURLFilter : TOKEN_REPLACE
+_io.BufferedRWPair --* ftplib.FTP : file
+_io.BufferedReader --* ftplib.FTP : file
+_io.BufferedWriter --* ftplib.FTP : file
+_io.StringIO --* conda.common.io.Spinner : fh
+_io.StringIO --* conda.common.io.captured.CapturedText : stdout
+_io.StringIO --* conda.common.io.captured.CapturedText : stderr
+_io.StringIO --* threading.Thread : _stderr
+_io.TextIOWrapper --* conda.common.io.Spinner : fh
+_io.TextIOWrapper --* ftplib.FTP : file
+_io.TextIOWrapper --* logging.StreamHandler : stream
+_io.TextIOWrapper --* threading.Thread : _stderr
+_queue.SimpleQueue --* concurrent.futures.thread.ThreadPoolExecutor : _work_queue
+_socket.socket.family --* ftplib.FTP : af
+_thread.RLock --* http.cookiejar.CookieJar : _cookies_lock
+_thread.RLock --* logging.Handler : lock
+_thread.RLock --* pip._vendor.requests.cookies.RequestsCookieJar : _cookies_lock
+_thread.RLock --* requests.cookies.RequestsCookieJar : _cookies_lock
+_thread.RLock --* threading.Condition : _lock
+_weakrefset.WeakSet --* conda._vendor.tqdm.std.tqdm : _instances
+argparse.HelpFormatter --* argparse.ArgumentParser : formatter_class
+argparse.HelpFormatter._Section --* argparse.HelpFormatter : _root_section
+argparse.HelpFormatter._Section --* argparse.HelpFormatter : _current_section
+argparse.HelpFormatter._Section --* argparse.HelpFormatter : _current_section
+argparse._ArgumentGroup --* argparse.ArgumentParser : _positionals
+argparse._ArgumentGroup --* argparse.ArgumentParser : _optionals
+argparse._ArgumentGroup --* argparse.ArgumentParser : _subparsers
+argparse._ArgumentGroup --* argparse.ArgumentParser : _subparsers
+array.array --* conda.common._logic._ClauseArray : _clause_array
+collections.OrderedDict --* conda._vendor.auxlib.entity.Entity : __fields__
+collections.OrderedDict --* conda.common.configuration.Configuration : raw_data
+collections.OrderedDict --* conda.common.pkg_formats.python.PythonDistributionMetadata : _data
+collections.OrderedDict --* conda.core.link.UnlinkLinkTransaction : prefix_setups
+collections.OrderedDict --* conda.core.link.UnlinkLinkTransaction : prefix_action_groups
+collections.OrderedDict --* conda.core.package_cache_data.ProgressiveFetchExtract : paired_actions
+collections.OrderedDict --* conda.core.solve.SolverStateContainer : specs_map
+collections.OrderedDict --* conda.core.solve.SolverStateContainer : specs_map
+collections.OrderedDict --* conda.models.prefix_graph.GeneralGraph : graph_by_name
+collections.OrderedDict --* conda.models.prefix_graph.PrefixGraph : graph
+collections.OrderedDict --* pip._vendor.requests.sessions.Session : adapters
+collections.OrderedDict --* pip._vendor.requests.structures.CaseInsensitiveDict : _store
+collections.OrderedDict --* requests.sessions.Session : adapters
+collections.OrderedDict --* requests.structures.CaseInsensitiveDict : _store
+collections.defaultdict --* conda.common.configuration.Configuration : _validation_errors
+collections.defaultdict --* conda.common.io.time_recorder : total_call_num
+collections.defaultdict --* conda.common.io.time_recorder : total_run_time
+collections.defaultdict --* conda.core.subdir_data.SubdirData : _names_index
+collections.defaultdict --* conda.core.subdir_data.SubdirData : _names_index
+collections.defaultdict --* conda.core.subdir_data.SubdirData : _track_features_index
+collections.defaultdict --* conda.core.subdir_data.SubdirData : _track_features_index
+collections.defaultdict --* conda.models.prefix_graph.GeneralGraph : specs_by_name
+collections.defaultdict --* conda.resolve.Resolve : trackers
+collections.deque --* queue._PySimpleQueue : _queue
+collections.deque --* threading.Condition : _waiters
+conda._vendor.auxlib._Null --* conda._vendor.auxlib.entity.Field : _default
+conda._vendor.auxlib._Null --* conda._vendor.auxlib.entity.Field : _default
+conda._vendor.auxlib._Null --* conda.core.package_cache_data.PackageCacheData : __is_writable
+conda._vendor.auxlib._Null --* conda.core.prefix_data.PrefixData : __is_writable
+conda._vendor.auxlib._Null --* conda.core.solve.Solver : _command
+conda._vendor.auxlib._Null --* conda.core.solve.SolverStateContainer : update_modifier
+conda._vendor.auxlib._Null --* conda.core.solve.SolverStateContainer : deps_modifier
+conda._vendor.auxlib.collection.AttrDict --* conda._vendor.auxlib.collection.AttrDict : __dict__
+conda._vendor.auxlib.collection.AttrDict --* conda.common.configuration.Configuration : _argparse_args
+conda._vendor.auxlib.collection.AttrDict --* conda.common.configuration.Configuration : _argparse_args
+conda._vendor.auxlib.collection.AttrDict --* conda.common.configuration.Configuration : _argparse_args
+conda._vendor.auxlib.collection.frozendict --* conda.models.match_spec.MatchSpec : _match_components
+conda._vendor.auxlib.entity.BooleanField --* conda.models.records.PathData : no_link
+conda._vendor.auxlib.entity.ComposableField --* conda.models.package_info.PackageInfo : channel
+conda._vendor.auxlib.entity.ComposableField --* conda.models.package_info.PackageInfo : repodata_record
+conda._vendor.auxlib.entity.ComposableField --* conda.models.package_info.PackageInfo : package_metadata
+conda._vendor.auxlib.entity.ComposableField --* conda.models.package_info.PackageInfo : paths_data
+conda._vendor.auxlib.entity.ComposableField --* conda.models.package_info.PackageMetadata : noarch
+conda._vendor.auxlib.entity.ComposableField --* conda.models.package_info.PackageMetadata : preferred_env
+conda._vendor.auxlib.entity.ComposableField --* conda.models.records.PrefixRecord : paths_data
+conda._vendor.auxlib.entity.ComposableField --* conda.models.records.PrefixRecord : link
+conda._vendor.auxlib.entity.EnumField --* conda.models.leased_path_entry.LeasedPathEntry : leased_path_type
+conda._vendor.auxlib.entity.EnumField --* conda.models.records.PackageRecord : metadata_signature_status
+conda._vendor.auxlib.entity.EnumField --* conda.models.records.PackageRecord : platform
+conda._vendor.auxlib.entity.EnumField --* conda.models.records.PathData : file_mode
+conda._vendor.auxlib.entity.EnumField --* conda.models.records.PathData : path_type
+conda._vendor.auxlib.entity.IntegerField --* conda.models.dist.Dist : build_number
+conda._vendor.auxlib.entity.IntegerField --* conda.models.package_info.PackageMetadata : package_metadata_version
+conda._vendor.auxlib.entity.IntegerField --* conda.models.records.PackageRecord : build_number
+conda._vendor.auxlib.entity.IntegerField --* conda.models.records.PackageRecord : legacy_bz2_size
+conda._vendor.auxlib.entity.IntegerField --* conda.models.records.PackageRecord : size
+conda._vendor.auxlib.entity.IntegerField --* conda.models.records.PathDataV1 : size_in_bytes
+conda._vendor.auxlib.entity.IntegerField --* conda.models.records.PathsData : paths_version
+conda._vendor.auxlib.entity.ListField --* conda.models.package_info.Noarch : entry_points
+conda._vendor.auxlib.entity.ListField --* conda.models.package_info.PreferredEnv : executable_paths
+conda._vendor.auxlib.entity.ListField --* conda.models.package_info.PreferredEnv : softlink_paths
+conda._vendor.auxlib.entity.ListField --* conda.models.records.PackageRecord : depends
+conda._vendor.auxlib.entity.ListField --* conda.models.records.PackageRecord : constrains
+conda._vendor.auxlib.entity.ListField --* conda.models.records.PathDataV1 : inode_paths
+conda._vendor.auxlib.entity.ListField --* conda.models.records.PathsData : paths
+conda._vendor.auxlib.entity.ListField --* conda.models.records.PrefixRecord : files
+conda._vendor.auxlib.entity.StringField --* conda.models.dist.Dist : channel
+conda._vendor.auxlib.entity.StringField --* conda.models.dist.Dist : dist_name
+conda._vendor.auxlib.entity.StringField --* conda.models.dist.Dist : name
+conda._vendor.auxlib.entity.StringField --* conda.models.dist.Dist : fmt
+conda._vendor.auxlib.entity.StringField --* conda.models.dist.Dist : version
+conda._vendor.auxlib.entity.StringField --* conda.models.dist.Dist : build_string
+conda._vendor.auxlib.entity.StringField --* conda.models.dist.Dist : base_url
+conda._vendor.auxlib.entity.StringField --* conda.models.dist.Dist : platform
+conda._vendor.auxlib.entity.StringField --* conda.models.leased_path_entry.LeasedPathEntry : _path
+conda._vendor.auxlib.entity.StringField --* conda.models.leased_path_entry.LeasedPathEntry : target_path
+conda._vendor.auxlib.entity.StringField --* conda.models.leased_path_entry.LeasedPathEntry : target_prefix
+conda._vendor.auxlib.entity.StringField --* conda.models.leased_path_entry.LeasedPathEntry : leased_path
+conda._vendor.auxlib.entity.StringField --* conda.models.leased_path_entry.LeasedPathEntry : package_name
+conda._vendor.auxlib.entity.StringField --* conda.models.package_info.PackageInfo : extracted_package_dir
+conda._vendor.auxlib.entity.StringField --* conda.models.package_info.PackageInfo : package_tarball_full_path
+conda._vendor.auxlib.entity.StringField --* conda.models.package_info.PackageInfo : url
+conda._vendor.auxlib.entity.StringField --* conda.models.package_info.PackageInfo : icondata
+conda._vendor.auxlib.entity.StringField --* conda.models.package_info.PreferredEnv : name
+conda._vendor.auxlib.entity.StringField --* conda.models.records.Link : source
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageCacheRecord : package_tarball_full_path
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageCacheRecord : extracted_package_dir
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : name
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : version
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : build
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : md5
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : legacy_bz2_md5
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : url
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : sha256
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : arch
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : preferred_env
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : license
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : license_family
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PackageRecord : date
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PathData : _path
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PathData : prefix_placeholder
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PathDataV1 : sha256
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PathDataV1 : sha256_in_prefix
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PrefixRecord : package_tarball_full_path
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PrefixRecord : extracted_package_dir
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PrefixRecord : requested_spec
+conda._vendor.auxlib.entity.StringField --* conda.models.records.PrefixRecord : auth
+conda._vendor.boltons.setutils.IndexedSet --* conda.common.configuration.Configuration : _reset_callbacks
+conda._vendor.boltons.setutils.IndexedSet --* conda.common.configuration.Configuration : _search_path
+conda._vendor.boltons.setutils.IndexedSet --* conda.core.solve.Solver : channels
+conda._vendor.boltons.setutils.IndexedSet --* conda.core.solve.SolverStateContainer : solution_precs
+conda._vendor.frozendict.frozendict --* conda.common.configuration.DefaultValueRawParameter : _value
+conda._vendor.frozendict.frozendict --* conda.common.configuration.MapLoadedParameter : _type
+conda._vendor.frozendict.frozendict --* conda.common.configuration.MapParameter : _type
+conda._vendor.frozendict.frozendict --* conda.common.configuration.YamlRawParameter : _value
+conda._vendor.frozendict.frozendict --* conda.common.pkg_formats.python.PythonDistributionMetadata : SINGLE_USE_KEYS
+conda._vendor.frozendict.frozendict --* conda.common.pkg_formats.python.PythonDistributionMetadata : MULTIPLE_USE_KEYS
+conda._vendor.tqdm.std.EMA --* conda._vendor.tqdm.std.tqdm : _ema_dn
+conda._vendor.tqdm.std.EMA --* conda._vendor.tqdm.std.tqdm : _ema_dn
+conda._vendor.tqdm.std.EMA --* conda._vendor.tqdm.std.tqdm : _ema_dt
+conda._vendor.tqdm.std.EMA --* conda._vendor.tqdm.std.tqdm : _ema_dt
+conda._vendor.tqdm.std.EMA --* conda._vendor.tqdm.std.tqdm : _ema_miniters
+conda._vendor.tqdm.std.EMA --* conda._vendor.tqdm.std.tqdm : _ema_miniters
+conda._vendor.tqdm.std.tqdm --* conda.common.io.ProgressBar : pbar
+conda._vendor.tqdm.utils.DisableOnWriteError --* conda._vendor.tqdm.std.tqdm : fp
+conda.base.constants.DepsModifier --* conda.core.solve.SolverStateContainer : deps_modifier
+conda.base.constants.UpdateModifier --* conda.core.solve.SolverStateContainer : update_modifier
+conda.common._logic.Clauses --* conda.common.logic.Clauses : _clauses
+conda.common._logic._ClauseList --* conda.common._logic._SatSolver : _clauses
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : add_pip_as_python_dependency
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : allow_conda_downgrades
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : allow_cycles
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : allow_softlinks
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : auto_update_conda
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : auto_activate_base
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : auto_stack
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : notify_outdated_conda
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : clobber
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : changeps1
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : env_prompt
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : create_default_packages
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : default_python
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : download_only
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : enable_private_envs
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : force_32bit
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : non_admin_enabled
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : pip_interop_enabled
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _default_threads
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _repodata_threads
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _verify_threads
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _execute_threads
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _aggressive_update_packages
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : safety_checks
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : extra_safety_checks
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _signing_metadata_url_base
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : path_conflict
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : pinned_packages
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : disallowed_packages
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : rollback_enabled
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : track_features
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : use_index_cache
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : separate_format_cache
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _root_prefix
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _envs_dirs
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _pkgs_dirs
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _subdir
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _subdirs
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : local_repodata_ttl
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : ssl_verify
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : client_ssl_cert
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : client_ssl_cert_key
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : proxy_servers
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : remote_connect_timeout_secs
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : remote_read_timeout_secs
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : remote_max_retries
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : remote_backoff_factor
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : add_anaconda_token
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : allow_non_channel_urls
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _channel_alias
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : channel_priority
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _channels
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _custom_channels
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _custom_multichannels
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _default_channels
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _migrated_channel_aliases
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : migrated_custom_channels
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : override_channels_enabled
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : show_channel_urls
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : use_local
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : whitelist_channels
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : restore_free_channel
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : repodata_fns
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _use_only_tar_bz2
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : always_softlink
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : always_copy
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : always_yes
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : debug
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : dev
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : dry_run
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : error_upload_url
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : force
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : json
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : offline
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : quiet
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : ignore_pinned
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : report_errors
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : shortcuts
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _verbosity
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : deps_modifier
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : update_modifier
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : sat_solver
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : solver_ignore_timestamps
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : force_remove
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : force_reinstall
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : target_prefix_override
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : unsatisfiable_hints
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : unsatisfiable_hints_check_depth
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : bld_path
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : anaconda_upload
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _croot
+conda.common.configuration.ParameterLoader --* conda.base.context.Context : _conda_build
+conda.common.io.CaptureTarget.STRING --* conda.common.io.captured.CapturedText : stdout
+conda.common.io.CaptureTarget.STRING --* conda.common.io.captured.CapturedText : stderr
+conda.common.io.CaptureTarget.STRING --* threading.Thread : _stderr
+conda.common.io.DummyExecutor --* conda.core.link.UnlinkLinkTransaction : execute_executor
+conda.common.io.ThreadLimitedThreadPoolExecutor --* conda.core.link.UnlinkLinkTransaction : execute_executor
+conda.common.pkg_formats.python.PythonDistributionMetadata --* conda.common.pkg_formats.python.PythonDistribution : _metadata
+conda.core.package_cache_data.ProgressiveFetchExtract --* conda.core.link.UnlinkLinkTransaction : _pfe
+conda.core.package_cache_data.ProgressiveFetchExtract --* conda.core.link.UnlinkLinkTransaction : _pfe
+conda.core.package_cache_data.UrlsData --* conda.core.package_cache_data.PackageCacheData : _urls_data
+conda.core.solve.SolverStateContainer --* conda.core.solve.Solver : ssc
+conda.gateways.connection.session.CondaHttpAuth --* conda.gateways.connection.session.CondaSession : auth
+conda.models.channel.Channel --* conda.core.subdir_data.SubdirData : channel
+conda.models.enums.LinkType.hardlink --* conda.core.path_actions.UnlinkPathAction : link_type
+conda.models.package_info.NoarchField --* conda.models.package_info.Noarch : type
+conda.models.records.ChannelField --* conda.models.records.PackageRecord : channel
+conda.models.records.FilenameField --* conda.models.records.PackageRecord : fn
+conda.models.records.LinkTypeField --* conda.models.records.Link : type
+conda.models.records.Md5Field --* conda.models.records.PackageCacheRecord : md5
+conda.models.records.NoarchField --* conda.models.records.PackageRecord : noarch
+conda.models.records.PackageTypeField --* conda.models.records.PackageRecord : package_type
+conda.models.records.PathDataV1 --* conda.core.path_actions.CreatePythonEntryPointAction : prefix_path_data
+conda.models.records.PathDataV1 --* conda.core.path_actions.LinkPathAction : prefix_path_data
+conda.models.records.PathDataV1 --* conda.core.path_actions.LinkPathAction : prefix_path_data
+conda.models.records.PathDataV1 --* conda.core.path_actions.LinkPathAction : prefix_path_data
+conda.models.records.PathDataV1 --* conda.core.path_actions.PrefixReplaceLinkAction : prefix_path_data
+conda.models.records.PrefixRecord --* conda.core.path_actions.CreatePrefixRecordAction : prefix_record
+conda.models.records.SubdirField --* conda.models.records.PackageRecord : subdir
+conda.models.records.TimestampField --* conda.models.records.PackageRecord : timestamp
+conda.models.records._FeaturesField --* conda.models.records.PackageRecord : track_features
+conda.models.records._FeaturesField --* conda.models.records.PackageRecord : features
+conda.models.version.VersionOrder --* conda.models.version.BuildNumberMatch : matcher_vo
+conda.models.version.VersionOrder --* conda.models.version.VersionSpec : matcher_vo
+conda.models.version.VersionOrder --* conda.models.version.VersionSpec : matcher_vo
+conda.models.version.VersionOrder --* conda.models.version.VersionSpec : matcher_vo
+conda.resolve.Resolve --* conda.core.solve.Solver : _r
+conda.resolve.Resolve --* conda.core.solve.Solver : _r
+ftplib.FTP --* conda.gateways.connection.adapters.ftp.FTPAdapter : conn
+functools.partial --* conda.gateways.logging.TokenURLFilter : TOKEN_REPLACE
+http.cookiejar.DefaultCookiePolicy --* http.cookiejar.CookieJar : _policy
+itertools.cycle --* conda.common.io.Spinner : spinner_cycle
+logging.PercentStyle --* logging.Formatter : _style
+pip._vendor.requests.cookies.RequestsCookieJar --* pip._vendor.requests.sessions.Session : cookies
+pip._vendor.requests.structures.CaseInsensitiveDict --* pip._vendor.requests.sessions.Session : headers
+queue._PySimpleQueue --* concurrent.futures.thread.ThreadPoolExecutor : _work_queue
+requests.cookies.RequestsCookieJar --* requests.sessions.Session : cookies
+requests.structures.CaseInsensitiveDict --* requests.sessions.Session : headers
+socket.SocketIO --* ftplib.FTP : file
+socket.socket --* ftplib.FTP : sock
+threading.Condition --* threading.Event : _cond
+threading.Condition --* threading.Semaphore : _cond
+threading.Event --* conda.common.io.Spinner : _stop_running
+threading.Event --* threading.Thread : _started
+threading.Semaphore --* concurrent.futures.thread.ThreadPoolExecutor : _idle_semaphore
+threading.Semaphore --* queue._PySimpleQueue : _count
+threading.Thread --* conda.common.io.Spinner : _spinner_thread
+threading._RLock --* http.cookiejar.CookieJar : _cookies_lock
+threading._RLock --* logging.Handler : lock
+threading._RLock --* pip._vendor.requests.cookies.RequestsCookieJar : _cookies_lock
+threading._RLock --* requests.cookies.RequestsCookieJar : _cookies_lock
+threading._RLock --* threading.Condition : _lock
+threading.lock --* concurrent.futures.thread.ThreadPoolExecutor : _shutdown_lock
+threading.lock --* conda.common.io.DummyExecutor : _shutdownLock
+@enduml
