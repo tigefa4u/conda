@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# Copyright (C) 2012 Anaconda, Inc
+# SPDX-License-Identifier: BSD-3-Clause
+
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 from pprint import pprint
@@ -11,9 +14,9 @@ from conda.models.match_spec import MatchSpec
 import conda.models.prefix_graph
 from conda.models.prefix_graph import PrefixGraph, GeneralGraph
 from conda.models.records import PackageRecord
+from conda.testing.helpers import add_subdir_to_iter, get_solver_4, get_solver_5
+
 import pytest
-from tests.core.test_solve import get_solver_4, get_solver_5
-from tests.helpers import add_subdir_to_iter
 
 try:
     from unittest.mock import Mock, patch

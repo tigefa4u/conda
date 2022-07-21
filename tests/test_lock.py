@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# Copyright (C) 2012 Anaconda, Inc
+# SPDX-License-Identifier: BSD-3-Clause
+
 import pytest
 from conda.lock import DirectoryLock, FileLock, LockError
 from os.path import basename, exists, isfile, join
@@ -118,9 +122,8 @@ def test_permission_file():
         Make sure no exception raised
     """
     from conda.auxlib.compat import Utf8NamedTemporaryFile
-    from conda.common.compat import text_type
     with Utf8NamedTemporaryFile(mode='r') as f:
-        if not isinstance(f.name, text_type):
+        if not isinstance(f.name, str):
             return
         with FileLock(f.name) as lock:
 

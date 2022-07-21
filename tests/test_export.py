@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# Copyright (C) 2012 Anaconda, Inc
+# SPDX-License-Identifier: BSD-3-Clause
+
 from os.path import exists, join
 from conda.auxlib.compat import Utf8NamedTemporaryFile
 from unittest import TestCase
@@ -5,7 +9,7 @@ from unittest import TestCase
 from conda.gateways.disk.delete import rm_rf
 import pytest
 
-from .test_create import Commands, PYTHON_BINARY, make_temp_env, make_temp_prefix, \
+from conda.testing.integration import Commands, PYTHON_BINARY, make_temp_env, make_temp_prefix, \
     package_is_installed, run_command
 
 
